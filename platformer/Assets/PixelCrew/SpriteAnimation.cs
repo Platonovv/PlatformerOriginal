@@ -19,7 +19,7 @@ namespace PixelCrew
         private int _currentSpriteIndex;
         private float _nextFrameTime;
 
-        private bool _isPlaying = true;
+        
         private void Start()
         {
             _renderer = GetComponent<SpriteRenderer>();
@@ -37,7 +37,7 @@ namespace PixelCrew
 
         private void Update()
         {
-            if (!_isPlaying || _nextFrameTime >Time.time) return ;
+            if (_nextFrameTime >Time.time) return ;
             
             if (_currentSpriteIndex >= _sprites.Length)
             {
