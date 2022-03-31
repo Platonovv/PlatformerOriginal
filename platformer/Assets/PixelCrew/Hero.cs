@@ -21,12 +21,16 @@ public class Hero : MonoBehaviour
 
    [SerializeField] private float _groundCheckRadius;
    [SerializeField] private Vector3 _groundCheckPositiondDelta;
+
+   [SerializeField] private SpawnComponent _footStepParticles;
+   [SerializeField] private ParticleSystem _hitParticles;
+   
+   
    
    private Collider2D[] _interactionResult = new Collider2D[1];
    private Rigidbody2D _rigidbody;
    private Vector2 _direction;
    private Animator _animator;
-   private SpriteRenderer _sprite;
    private bool _isGrounded;
    private bool _allowDoubleJump;
    
@@ -35,12 +39,11 @@ public class Hero : MonoBehaviour
    private static readonly int VerticalVelocity = Animator.StringToHash("vertical-velocity");
    private static readonly int Hit = Animator.StringToHash("hit");
 
-
+   private int _coins;
    private void Awake()
    {
       _rigidbody = GetComponent<Rigidbody2D>();
       _animator = GetComponent<Animator>();
-      _sprite = GetComponent<SpriteRenderer>();
    }
 
    public void SetDirection(Vector2 direction)
@@ -110,11 +113,11 @@ public class Hero : MonoBehaviour
       {
          if (_direction.x > 0)
          {
-            _sprite.flipX = false;
+            transform.localScale =  Vector3.one;
          }
          else if (_direction.x < 0)
          {
-            _sprite.flipX = true;
+            transform.localScale = new Vector3(-1, 1, 1);
          }
       }
    
@@ -138,12 +141,48 @@ public class Hero : MonoBehaviour
       Debug.Log("Something!");
    }
 
+
+   public void AddCoin(int coins)
+   {
+      _coins += coins;
+      Debug.Log($"{gameObject.name}, coins : {_coins} ");
+
+   }
+   
+   
+   
+   
    public void TakeDamage()
    {
       _animator.SetTrigger(Hit);
       _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damagejumpSpeed);
+
+      if (_coins > 0)
+      {
+         SpawnCoins();
+      }
+      
    }
 
+   private void SpawnCoins()
+   {
+      var numCoinsToDisoise = Math.Min(_coins, 5);
+      _coins -= numCoinsToDisoise;
+      Debug.Log($"{gameObject.name}, coins : {_coins} ");
+
+      var burst = _hitParticles.emission.GetBurst(0);
+      burst.count = numCoinsToDisoise;
+      _hitParticles.emission.SetBurst(0,burst);
+      
+      _hitParticles.gameObject.SetActive(true);
+      _hitParticles.Play();
+   }
+
+   public void TakeHeal()
+   {
+      _animator.SetTrigger(Hit);
+      
+   }
    public void Interact()
    {
       var size = Physics2D.OverlapCircleNonAlloc(
@@ -160,6 +199,11 @@ public class Hero : MonoBehaviour
             interactable.Interact();
          }
       }
+   }
+
+   public void SpawnFootDust()
+   {
+      _footStepParticles.Spawn();
    }
 }
 }
