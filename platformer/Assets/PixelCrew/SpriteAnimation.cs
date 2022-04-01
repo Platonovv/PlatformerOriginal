@@ -57,5 +57,8 @@ namespace PixelCrew
             _currentSpriteIndex++;
         }
     }  
-}
+       
+    }
+    
 
+ 

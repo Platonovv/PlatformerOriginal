@@ -23,6 +23,7 @@ public class Hero : MonoBehaviour
    [SerializeField] private Vector3 _groundCheckPositiondDelta;
 
    [SerializeField] private SpawnComponent _footStepParticles;
+   [SerializeField] private SpawnComponent _footJumpParticles;
    [SerializeField] private ParticleSystem _hitParticles;
    
    
@@ -33,6 +34,7 @@ public class Hero : MonoBehaviour
    private Animator _animator;
    private bool _isGrounded;
    private bool _allowDoubleJump;
+   private bool _isJumping;
    
    private static readonly int IsGroundKey = Animator.StringToHash("is-ground");
    private static readonly int IsRunning = Animator.StringToHash("is-running");
@@ -77,14 +79,19 @@ public class Hero : MonoBehaviour
    {
       var yVelocity = _rigidbody.velocity.y;
       var isJumpPressing = _direction.y > 0;
-      
-      if (_isGrounded) _allowDoubleJump = true;
+
+      if (_isGrounded)
+      {
+         _allowDoubleJump = true;
+         _isJumping = false;
+      }
       
       if (isJumpPressing)
       {
+         _isJumping = true;
          yVelocity = CalculateJumpVelocity(yVelocity);
       }
-      else if (_rigidbody.velocity.y > 0)
+      else if (_rigidbody.velocity.y > 0 && _isJumping)
       {
          yVelocity *= 0.5f;
          
@@ -145,7 +152,7 @@ public class Hero : MonoBehaviour
    public void AddCoin(int coins)
    {
       _coins += coins;
-      Debug.Log($"{gameObject.name}, coins : {_coins} ");
+      Debug.Log($"{gameObject.name}, total coins : {_coins} ");
 
    }
    
@@ -154,6 +161,7 @@ public class Hero : MonoBehaviour
    
    public void TakeDamage()
    {
+      _isJumping = false;
       _animator.SetTrigger(Hit);
       _rigidbody.velocity = new Vector2(_rigidbody.velocity.x, _damagejumpSpeed);
 
@@ -205,5 +213,13 @@ public class Hero : MonoBehaviour
    {
       _footStepParticles.Spawn();
    }
+   
+   public void SpawnJumpDust()
+   
+      {
+            _footJumpParticles.Spawn();
+      }
+
+
 }
 }
