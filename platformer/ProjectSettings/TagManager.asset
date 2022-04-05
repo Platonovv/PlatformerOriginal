@@ -18,7 +18,7 @@ TagManager:
   - Creatures
   - DecorBack
   - Interactables
-  - 
+  - CoinsMask
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: Level
     uniqueID: 1158184007
+    locked: 0
+  - name: CoinsMask
+    uniqueID: 3173863943
     locked: 0
