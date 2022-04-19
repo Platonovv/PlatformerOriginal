@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,6 +12,7 @@ namespace PixelCrew.Components
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onDie;
         [SerializeField] private UnityEvent _onHeal;
+        [SerializeField] private HealthChangeEvent _onChange;
 
 
         public int Health => _health;
@@ -20,6 +22,8 @@ namespace PixelCrew.Components
         public void ChangeHealth(int deltaHealth)
         {
             _health += deltaHealth;
+            _onChange?.Invoke(_health);
+            
             if (deltaHealth <0)
             {
                 _onDamage?.Invoke();
@@ -33,8 +37,29 @@ namespace PixelCrew.Components
                 _onDie?.Invoke();
                 _health = 0;
             }
-        }   
+        }
+
+
+#if UNITY_EDITOR
+        [ContextMenu("Update Health")]
+        private void UpdateHealth()
+        {
+            _onChange?.Invoke(_health);
+        }
+#endif
+
+        public void SetHealth(int health)
+        {
+            _health = health;
+        }
         
+        
+        [Serializable]
+        public class HealthChangeEvent : UnityEvent<int>
+        {
+            
+        }
     }
+    
 }
 
