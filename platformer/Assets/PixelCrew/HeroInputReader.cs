@@ -8,8 +8,8 @@ namespace PixelCrew
 {
 
 
-public class HeroInputReader : MonoBehaviour
-{
+    public class HeroInputReader : MonoBehaviour
+ {
     [SerializeField] private Hero _hero;
     public void OnMovement(InputAction.CallbackContext context)
     {
@@ -34,7 +34,14 @@ public class HeroInputReader : MonoBehaviour
         }
 
     }
+    public void OnDoAttack(InputAction.CallbackContext context)
+    {
+        if (context.canceled)
+        {
+            _hero.Attack();
+        }
 
+    }
     
-}
+ }
 }
