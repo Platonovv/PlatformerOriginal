@@ -1,5 +1,6 @@
 ﻿
 using System.Numerics;
+using PixelCrew.Creatures;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Vector2 = UnityEngine.Vector2;
@@ -17,14 +18,6 @@ namespace PixelCrew
         _hero.SetDirection(direction);
     }
     
-    public void OnSaySomething(InputAction.CallbackContext context)
-    {
-        if (context.canceled)
-        {
-            _hero.SaySomething();
-        }
-
-    }
 
     public void OnInteract(InputAction.CallbackContext context)
     {
