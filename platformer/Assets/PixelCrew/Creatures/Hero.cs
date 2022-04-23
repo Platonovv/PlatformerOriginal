@@ -9,6 +9,7 @@ using UnityEditor.Animations;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.SocialPlatforms;
 
 namespace PixelCrew.Creatures
 {
@@ -28,6 +29,7 @@ namespace PixelCrew.Creatures
       [SerializeField] private float _groundCheckRadius;
       [SerializeField] private Vector3 _groundCheckPositiondDelta;
 
+      [SerializeField] private Cooldown _throwCooldown;
       [SerializeField] private AnimatorController _armed;
       [SerializeField] private AnimatorController _disarmed;
 
@@ -35,7 +37,8 @@ namespace PixelCrew.Creatures
       [Space] [Header("Particles")]
       [SerializeField] private ParticleSystem _hitParticles;
       
-      
+      protected static readonly int ThrowKey = Animator.StringToHash("throw");
+
      
       private bool _allowDoubleJump;
       private bool _isOnWall;
@@ -43,6 +46,7 @@ namespace PixelCrew.Creatures
       
       private GameSession _session;
       private float _defaultGravityScale;
+    
 
 
       protected override void Awake()
@@ -95,7 +99,7 @@ namespace PixelCrew.Creatures
          Animator.SetFloat(VerticalVelocity, Rigidbody.velocity.y);
 
 
-         UpdateSpriteDirection();
+         UpdateSpriteDirection(Direction);
       }
 
 
@@ -209,6 +213,33 @@ namespace PixelCrew.Creatures
       private void UpdateHeroWeapon()
       {
          Animator.runtimeAnimatorController = _session.Data.isArmed ? _armed : _disarmed;
+      }
+
+
+      public void OnDoThrow()
+      {
+         _particles.Spawn("Throw");
+      }
+      
+      
+      public void Throw()
+      {
+         if (_throwCooldown.IsReady && _session.Data.Sword >1) 
+         {
+            Animator.SetTrigger(ThrowKey);
+            _session.Data.Sword -= 1;
+            _throwCooldown.Reset();
+            
+         }
+      }
+      
+
+      public void AddSword(int sword)
+      {
+         
+            _session.Data.Sword += sword;
+            Debug.Log($"{gameObject.name}, total sword : {_session.Data.Sword} ");
+
       }
    }
 }

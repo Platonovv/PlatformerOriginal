@@ -58,7 +58,7 @@ namespace PixelCrew
 
         private void StartAnimation()
         {
-            _nextFrameTime = Time.time + _secPerFrame;
+            _nextFrameTime = Time.time;
            enabled = _isPlaying = true;
             _currentFrame = 0;
 
@@ -66,7 +66,7 @@ namespace PixelCrew
 
         private void OnEnable()
         {
-            _nextFrameTime = Time.time + _secPerFrame;
+            _nextFrameTime = Time.time;
         }
 
 

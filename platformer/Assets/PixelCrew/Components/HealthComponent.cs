@@ -21,6 +21,8 @@ namespace PixelCrew.Components
 
         public void ChangeHealth(int deltaHealth)
         {
+            if (_health <= 0) return;
+            
             _health += deltaHealth;
             _onChange?.Invoke(_health);
             

@@ -46,12 +46,15 @@ TagManager:
   - name: DecorBack
     uniqueID: 2289320005
     locked: 0
-  - name: Creatures
-    uniqueID: 602406303
+  - name: TileMap
+    uniqueID: 2502213087
     locked: 0
   - name: Level
     uniqueID: 1158184007
     locked: 0
   - name: CoinsMask
     uniqueID: 3173863943
+    locked: 0
+  - name: Creatures
+    uniqueID: 602406303
     locked: 0

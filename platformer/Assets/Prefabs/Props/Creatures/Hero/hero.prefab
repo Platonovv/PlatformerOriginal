@@ -4922,6 +4922,7 @@ Transform:
   - {fileID: 444909684767226683}
   - {fileID: 1987042362}
   - {fileID: 1170211742459760751}
+  - {fileID: 2378336829265357077}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4961,8 +4962,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1158184007
-  m_SortingLayer: 3
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d9ba015d48924a040949a07c914d8b44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5000,6 +5001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f34d6cd6c1e35149b5246e91e445193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _invertScale: 0
   _speed: 3
   _jumpSpeed: 12
   _damageVelocity: 20
@@ -5018,6 +5020,8 @@ MonoBehaviour:
   _interactionRadius: 1
   _groundCheckRadius: 0.3
   _groundCheckPositiondDelta: {x: 0, y: 0, z: 0}
+  _throwCooldown:
+    _value: 1
   _armed: {fileID: 9100000, guid: be047b7e9a9c7244dacc5b07795f2a21, type: 2}
   _disarmed: {fileID: 9100000, guid: ddd98b1fb1c498f4dae4cbc98e35ee7a, type: 2}
   _hitParticles: {fileID: 444909683889365025}
@@ -5107,6 +5111,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 36d4c125-41f4-4104-9e3c-04b1f0b79bed
     m_ActionName: Hero/Attack[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 444909684101719975}
+        m_MethodName: OnThrow
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 509f0b61-f77a-4833-a572-27531ad9ad44
+    m_ActionName: Hero/Throw[/Keyboard/shift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -5195,7 +5214,7 @@ Animator:
   m_GameObject: {fileID: 444909684101719976}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ddd98b1fb1c498f4dae4cbc98e35ee7a, type: 2}
+  m_Controller: {fileID: 9100000, guid: be047b7e9a9c7244dacc5b07795f2a21, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5294,6 +5313,8 @@ MonoBehaviour:
     Component: {fileID: 444909684923373265}
   - Id: AttackSword
     Component: {fileID: 444909684767226680}
+  - Id: Throw
+    Component: {fileID: 4486315113554584891}
 --- !u!1 &444909684218330663
 GameObject:
   m_ObjectHideFlags: 0
@@ -5339,6 +5360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 444909684218330660}
   _prefab: {fileID: 5400866807150721509, guid: 098c89eec55068940946e3a6394b2079, type: 3}
+  _invertXScale: 0
 --- !u!1 &444909684308864181
 GameObject:
   m_ObjectHideFlags: 0
@@ -5448,6 +5470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 444909684767226683}
   _prefab: {fileID: 6599364818312210694, guid: fb703b0cee36d494f93ba9ac8bce8f19, type: 3}
+  _invertXScale: 0
 --- !u!1 &444909684923373267
 GameObject:
   m_ObjectHideFlags: 0
@@ -5493,6 +5516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 444909684923373264}
   _prefab: {fileID: 6956794804060950928, guid: 73def7fa7d296c24b8c862fb73e16ae0, type: 3}
+  _invertXScale: 0
 --- !u!1 &444909684972998011
 GameObject:
   m_ObjectHideFlags: 0
@@ -5615,6 +5639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 444909685136206196}
   _prefab: {fileID: 1653231435791186296, guid: 6d7cfbb3f3a13504fb1372073c1eb058, type: 3}
+  _invertXScale: 0
 --- !u!1 &7518426309361276081
 GameObject:
   m_ObjectHideFlags: 0
@@ -5691,3 +5716,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7085922eb364a9dba6e1a3775e92e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &9079543067776046991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2378336829265357077}
+  - component: {fileID: 4486315113554584891}
+  m_Layer: 17
+  m_Name: ThrowSwordSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2378336829265357077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9079543067776046991}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.383, y: -0.021, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 444909684101719977}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4486315113554584891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9079543067776046991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75f03e2432484383bbc1bb64587449e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 2378336829265357077}
+  _prefab: {fileID: 6956794804060950928, guid: ab40abddec2ad6a4e9594584e6a4a897, type: 3}
+  _invertXScale: 0

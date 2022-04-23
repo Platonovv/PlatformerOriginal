@@ -29,11 +29,21 @@ namespace PixelCrew
     }
     public void OnDoAttack(InputAction.CallbackContext context)
     {
-        if (context.canceled)
+        if (context.performed)
         {
             _hero.Attack();
         }
 
+    }
+
+    public void OnThrow(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _hero.Throw();
+        }
+        
+        
     }
     
  }
