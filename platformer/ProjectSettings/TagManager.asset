@@ -25,9 +25,9 @@ TagManager:
   - Walls
   - Enemy
   - Hero
-  - 
-  - 
-  - 
+  - Enemies
+  - Collectables
+  - Checkers
   - 
   - 
   - 

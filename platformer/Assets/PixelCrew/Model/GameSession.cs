@@ -7,6 +7,7 @@ namespace PixelCrew.Model
     {
         [SerializeField] private PlayerData _data;
         public PlayerData Data => _data;
+        private PlayerData _save;
 
 
         private void Awake()
@@ -17,6 +18,7 @@ namespace PixelCrew.Model
             }
             else
             {
+                Save();
                 DontDestroyOnLoad(this);
             }
         }
@@ -32,6 +34,16 @@ namespace PixelCrew.Model
 
             return false;
             
+        }
+
+        public void Save()
+        {
+            _save = _data.Clone();
+        }
+
+        public void LoadLastSave()
+        {
+            _data = _save.Clone();
         }
     }
 }
