@@ -1,15 +1,16 @@
 ﻿using System;
 using UnityEngine;
 
-namespace PixelCrew.Model
+namespace PixelCrew.Model.Data
 {
     [Serializable]
     public class PlayerData
     {
-        public int Coins;
+        [SerializeField] private InventoryData _inventory;
+        
         public int Hp;
-        public bool isArmed;
-        public int Sword;
+
+        public InventoryData Inventory => _inventory;
 
         public PlayerData Clone()
         {

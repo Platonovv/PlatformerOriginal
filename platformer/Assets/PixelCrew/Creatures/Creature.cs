@@ -1,5 +1,6 @@
 ﻿using System;
 using PixelCrew.Components;
+using PixelCrew.Components.Audio;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.GoBased;
 using UnityEngine;
@@ -18,13 +19,14 @@ namespace PixelCrew.Creatures
         [Header("Checkers")]
         
         [SerializeField] protected LayerMask _groundLayer;
-        [SerializeField] private LayerCheck _groundCheck;
+        [SerializeField] private ColliderCheck _groundCheck;
         [SerializeField] private CheckCircleOverlap _attackRange;
         [SerializeField] protected SpawnListComponent _particles;
 
         protected Rigidbody2D Rigidbody;
         protected Vector2 Direction;
         protected Animator Animator;
+        protected PlaySoundsComponent Sounds;
         protected bool IsGrounded;
         private bool _isJumping;
 
@@ -39,6 +41,7 @@ namespace PixelCrew.Creatures
         {
             Rigidbody = GetComponent<Rigidbody2D>();
             Animator = GetComponent<Animator>();
+            Sounds = GetComponent<PlaySoundsComponent>();
         }
         
         public void SetDirection(Vector2 direction)
@@ -99,13 +102,18 @@ namespace PixelCrew.Creatures
             if (IsGrounded)
             {
                 yVelocity += _jumpSpeed;
-                _particles.Spawn("Jump");
+                DoJumpVfx();
             }
 
             return yVelocity;
 
         }
 
+        protected void DoJumpVfx()
+        {
+            _particles.Spawn("Jump");
+            Sounds.Play("Jump");
+        }
         public void UpdateSpriteDirection(Vector2 direction)
         {
             var multiplier = _invertScale ? -1 : 1;
@@ -129,12 +137,13 @@ namespace PixelCrew.Creatures
         public virtual void Attack()
         {
             Animator.SetTrigger(AttackKey);
-            _particles.Spawn("AttackSword");
         }
         
         public void OnAttack()
         {
             _attackRange.Check();
+            _particles.Spawn("AttackSword");
+            Sounds.Play("Melee");
         }
     }
 }

@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 3847002281678531813}
   - component: {fileID: 3847002281678531812}
   - component: {fileID: 3847002281678531815}
-  - component: {fileID: 4047883357378350097}
   - component: {fileID: 729183524}
+  - component: {fileID: 6594491676319095086}
   m_Layer: 13
   m_Name: GoldenCoin
   m_TagString: Untagged
@@ -118,12 +118,12 @@ MonoBehaviour:
   _tag: Player
   _layer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4047883357378350097}
-        m_MethodName: AddCoins
+      - m_Target: {fileID: 6594491676319095086}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -143,17 +143,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: destroy
           m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 3847002281678531834}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &3847002281678531812
 MonoBehaviour:
@@ -214,19 +203,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &4047883357378350097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3847002281678531814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa39b3474fbe38743b7f3b66e9a3e9ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _coins: 10
 --- !u!50 &729183524
 Rigidbody2D:
   serializedVersion: 4
@@ -248,3 +224,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6594491676319095086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3847002281678531814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5394c05cfcde4c91b2085f9761167e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Coin
+  _count: 10

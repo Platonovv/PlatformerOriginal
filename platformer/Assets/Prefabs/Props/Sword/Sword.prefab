@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 8558366837932911926}
   - component: {fileID: 8558366837932911927}
   - component: {fileID: 8558366837932911924}
-  - component: {fileID: 8558366837932911925}
   - component: {fileID: 4769536672576635305}
-  - component: {fileID: 502463509948426071}
+  - component: {fileID: 7938991520166391583}
   m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
@@ -151,19 +150,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 502463509948426071}
-        m_MethodName: AddSword
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8558366837932911925}
-        m_MethodName: ArmHero
+      - m_Target: {fileID: 7938991520166391583}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -184,29 +172,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8558366837932911927}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &8558366837932911925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8558366837932911930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aae2f1820c6f445c9fa8bc570ff3cacd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4769536672576635305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -220,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 8558366837932911930}
---- !u!114 &502463509948426071
+--- !u!114 &7938991520166391583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,7 +194,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8558366837932911930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25984c9cde9d4a1b990d24b700943e66, type: 3}
+  m_Script: {fileID: 11500000, guid: 5394c05cfcde4c91b2085f9761167e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sword: 1
+  _id: Sword
+  _count: 1

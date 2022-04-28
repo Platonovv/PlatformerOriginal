@@ -61,8 +61,11 @@ namespace PixelCrew.Components
         {
             
         }
-        
-        
-        
+
+
+        public void SetCount(int count)
+        {
+            _count = count;
+        }
     }
 }
