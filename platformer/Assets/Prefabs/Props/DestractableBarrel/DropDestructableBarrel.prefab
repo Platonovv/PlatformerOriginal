@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2119825630
 Transform:
   m_ObjectHideFlags: 0
@@ -47,9 +47,9 @@ MonoBehaviour:
   _count: 10
   _drop:
   - Drop: {fileID: 7157549082874687596, guid: 52a7364294f230247a5972ca463ad029, type: 3}
-    Probability: 80
+    Probability: 30
   - Drop: {fileID: 1068831851308937069, guid: 0039c33ce795f1d4ba00ad14c5b76a02, type: 3}
-    Probability: 20
+    Probability: 30
   _onDropCalculated:
     m_PersistentCalls:
       m_Calls:
@@ -64,6 +64,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _spawnOnEnable: 1
 --- !u!114 &2119825628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +99,8 @@ GameObject:
   - component: {fileID: 1963948762719320168}
   - component: {fileID: 1963948762719320172}
   - component: {fileID: 1811734690058344352}
+  - component: {fileID: 1346142229}
+  - component: {fileID: 1346142220}
   m_Layer: 0
   m_Name: DropDestructableBarrel
   m_TagString: Enemy
@@ -299,6 +302,17 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1346142220}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Die
+          m_BoolArgument: 0
+        m_CallState: 2
   _onHeal:
     m_PersistentCalls:
       m_Calls: []
@@ -383,6 +397,63 @@ MonoBehaviour:
     Component: {fileID: 1963948762719320172}
   - Id: 
     Component: {fileID: 697105540617823823}
+--- !u!114 &1346142229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963948762719320180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52fbe445d8f0c004fb36f70d1360faa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tag: Player
+  _layer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1963948762719320173}
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: xxx
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1346142220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963948762719320180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadf51e6ad6a4b64a6dd33152d8e4e76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _source: {fileID: 0}
+  _sounds:
+  - _id: Die
+    _clip: {fileID: 8300000, guid: 5da039ae7e4f45448a0b53d82b141ef3, type: 3}
 --- !u!1 &7053591913226601250
 GameObject:
   m_ObjectHideFlags: 0
