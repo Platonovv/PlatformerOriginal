@@ -16,7 +16,8 @@ GameObject:
   - component: {fileID: 77486205318750663}
   - component: {fileID: 6476075156507087028}
   - component: {fileID: 2414250326188031297}
-  m_Layer: 18
+  - component: {fileID: 1859150847372909395}
+  m_Layer: 21
   m_Name: HeadTrap2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -241,11 +242,32 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -0.27625147, y: 0.19001707}
       - {x: -0.31001854, y: 0.14125437}
-      - {x: -0.2850255, y: -0.48000574}
-      - {x: 0.27376997, y: -0.49000287}
-      - {x: 0.30501997, y: -0.4424986}
+      - {x: -0.3248581, y: -0.48797226}
+      - {x: 0.33351767, y: -0.5059358}
+      - {x: 0.3448521, y: -0.450465}
       - {x: 0.32501423, y: 0.1312572}
       - {x: 0.28125, y: 0.20501271}
+--- !u!50 &1859150847372909395
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765880750522906683}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
 --- !u!1 &3793279025495062795
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +281,7 @@ GameObject:
   - component: {fileID: 1553561177357963170}
   - component: {fileID: 6101660435697977578}
   - component: {fileID: 8532089712706616403}
-  m_Layer: 18
+  m_Layer: 21
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -367,7 +389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4595045034916861010}
   - component: {fileID: 7463894532427850374}
-  m_Layer: 18
+  m_Layer: 21
   m_Name: WoodSpikeThrow
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -414,7 +436,7 @@ GameObject:
   - component: {fileID: 4211541491955200297}
   - component: {fileID: 1240097209815749344}
   - component: {fileID: 2876395578877802727}
-  m_Layer: 18
+  m_Layer: 21
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +498,7 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 131072
-  _isTouchingLayer: 1
+  _isTouchingLayer: 0
 --- !u!114 &2876395578877802727
 MonoBehaviour:
   m_ObjectHideFlags: 0

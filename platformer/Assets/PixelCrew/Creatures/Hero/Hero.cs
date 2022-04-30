@@ -5,6 +5,7 @@ using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.GoBased;
 using PixelCrew.Components.Health;
 using PixelCrew.Model;
+using PixelCrew.Model.Data;
 using PixelCrew.Utils;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -14,7 +15,7 @@ namespace PixelCrew.Creatures.Hero
 {
 
 
-   public class Hero : Creature
+   public class Hero : Creature, ICanAddInInventory
    {
       [SerializeField] private CheckCircleOverlap _interactionCheck;
       [SerializeField] private LayerMask _interactionLayer;

@@ -21,7 +21,7 @@ namespace PixelCrew.Model.Definitions
         }
         
 #if UNITY_EDITOR
-        public ItemDef[] itemForEditor => _items;
+        public ItemDef[] itemsForEditor => _items;
 #endif   
     }
     
@@ -33,7 +33,9 @@ namespace PixelCrew.Model.Definitions
     public struct ItemDef
     {
         [SerializeField] private string _id;
+        [SerializeField] private bool _isStackable;
         public string Id => _id;
+        public bool IsStackable => _isStackable;
 
         public bool IsVoid => string.IsNullOrEmpty(_id);
     }

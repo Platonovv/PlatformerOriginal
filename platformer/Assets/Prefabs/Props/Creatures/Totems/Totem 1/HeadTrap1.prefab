@@ -16,7 +16,8 @@ GameObject:
   - component: {fileID: 2201036711942829648}
   - component: {fileID: 77486205318750663}
   - component: {fileID: 6476075156507087028}
-  m_Layer: 18
+  - component: {fileID: 499305000}
+  m_Layer: 21
   m_Name: HeadTrap1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -76,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1158184007
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f478b453a54d43547b3d39e27da8f7f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -121,11 +122,11 @@ PolygonCollider2D:
       - {x: -0.42959404, y: 0.21084452}
       - {x: -0.44969034, y: 0.0901494}
       - {x: -0.9173837, y: 0.05891919}
-      - {x: -0.8672304, y: -0.08578575}
-      - {x: -0.5445361, y: -0.301718}
+      - {x: -0.9383788, y: -0.08578575}
+      - {x: -0.94296455, y: -0.4629867}
       - {x: -0.38936234, y: -0.46479726}
       - {x: 0.13828611, y: -0.46982622}
-      - {x: 0.72700787, y: -0.2097683}
+      - {x: 0.8930192, y: -0.48013055}
       - {x: 0.8721237, y: -0.099855185}
 --- !u!114 &1896176547326795030
 MonoBehaviour:
@@ -251,6 +252,27 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!50 &499305000
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765880750522906683}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &3793279025495062795
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +286,7 @@ GameObject:
   - component: {fileID: 1553561177357963170}
   - component: {fileID: 6101660435697977578}
   - component: {fileID: 8532089712706616403}
-  m_Layer: 18
+  m_Layer: 20
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -419,7 +441,7 @@ GameObject:
   - component: {fileID: 4211541491955200297}
   - component: {fileID: 1240097209815749344}
   - component: {fileID: 2876395578877802727}
-  m_Layer: 18
+  m_Layer: 20
   m_Name: Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -481,7 +503,7 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 131072
-  _isTouchingLayer: 1
+  _isTouchingLayer: 0
 --- !u!114 &2876395578877802727
 MonoBehaviour:
   m_ObjectHideFlags: 0

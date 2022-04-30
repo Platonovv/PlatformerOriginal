@@ -172,6 +172,7 @@ GameObject:
   - component: {fileID: 3594166446931923090}
   - component: {fileID: 7578966735338037729}
   - component: {fileID: 6494568033521445829}
+  - component: {fileID: 1388872000286534809}
   m_Layer: 18
   m_Name: HeadTrap2twoHead
   m_TagString: Enemy
@@ -396,10 +397,31 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.30502, y: 0.45001435}
-      - {x: -0.3000214, y: -0.4800057}
-      - {x: 0.29502288, y: -0.4850043}
+      - {x: -0.3358705, y: -0.47602245}
+      - {x: 0.33087197, y: -0.4770378}
       - {x: 0.3100185, y: 0.38625562}
       - {x: 0.19749737, y: 0.43501854}
+--- !u!50 &1388872000286534809
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4202621926415206766}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
 --- !u!1 &6131613990371940304
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,7 +496,7 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 131072
-  _isTouchingLayer: 1
+  _isTouchingLayer: 0
 --- !u!114 &1664432551261292978
 MonoBehaviour:
   m_ObjectHideFlags: 0

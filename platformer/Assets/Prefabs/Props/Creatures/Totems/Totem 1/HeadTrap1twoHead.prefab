@@ -172,14 +172,14 @@ GameObject:
   - component: {fileID: 3348959751092766469}
   - component: {fileID: 3594166446931923090}
   - component: {fileID: 7578966735338037729}
-  - component: {fileID: 1427830050573480341}
+  - component: {fileID: 1733884318}
   m_Layer: 18
   m_Name: HeadTrap1twoHead
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5676562870028033197
 Transform:
   m_ObjectHideFlags: 0
@@ -278,11 +278,12 @@ PolygonCollider2D:
       - {x: -0.42959404, y: 0.21084452}
       - {x: -0.44969034, y: 0.0901494}
       - {x: -0.9173837, y: 0.05891919}
-      - {x: -0.8672304, y: -0.08578575}
-      - {x: -0.5445361, y: -0.301718}
+      - {x: -0.92414904, y: -0.090529025}
+      - {x: -0.9002757, y: -0.47247326}
       - {x: -0.38936234, y: -0.46479726}
+      - {x: 0.10013628, y: -0.46946263}
       - {x: 0.13828611, y: -0.46982622}
-      - {x: 0.72700787, y: -0.2097683}
+      - {x: 0.8835335, y: -0.470644}
       - {x: 0.8721237, y: -0.099855185}
 --- !u!114 &3072247254804999235
 MonoBehaviour:
@@ -408,7 +409,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!50 &1427830050573480341
+--- !u!50 &1733884318
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -428,7 +429,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 5
 --- !u!1 &6131613990371940304
 GameObject:
   m_ObjectHideFlags: 0
@@ -503,7 +504,7 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 131072
-  _isTouchingLayer: 1
+  _isTouchingLayer: 0
 --- !u!114 &1664432551261292978
 MonoBehaviour:
   m_ObjectHideFlags: 0

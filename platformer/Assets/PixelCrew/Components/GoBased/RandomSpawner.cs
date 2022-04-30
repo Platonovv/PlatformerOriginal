@@ -7,7 +7,7 @@ namespace PixelCrew.Components.GoBased
 {
     public class RandomSpawner : MonoBehaviour
     {
-        [Header("Spawm bound")] [SerializeField]
+        [Header("Spawn bound")] [SerializeField]
         private float _sectorAngle = 60;
 
         [SerializeField] private float _sectorRotation;
@@ -28,6 +28,15 @@ namespace PixelCrew.Components.GoBased
             _routine = StartCoroutine(StartSpawn(items));
         }
 
+
+        public void DropImmediate(GameObject[] items)
+        {
+            foreach (var item in items)
+            {
+                Spawn(item);
+            }
+        }
+        
         private IEnumerator StartSpawn(GameObject[] particles)
         {
             for (var i = 0; i < particles.Length; i++)

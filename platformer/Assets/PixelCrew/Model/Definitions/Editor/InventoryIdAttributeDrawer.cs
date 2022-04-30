@@ -10,7 +10,7 @@ namespace PixelCrew.Model.Definitions.Editor
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            var defs = DefsFacade.I.Items.itemForEditor;
+            var defs = DefsFacade.I.Items.itemsForEditor;
             var ids = new List<string>();
             foreach (var itemDef in defs)
             {
