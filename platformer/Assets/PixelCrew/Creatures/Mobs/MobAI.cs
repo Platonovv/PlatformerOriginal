@@ -2,6 +2,7 @@
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.GoBased;
 using PixelCrew.Creatures.Mobs.Patrolling;
+using PixelCrew.Utils;
 using UnityEngine;
 
 namespace PixelCrew.Creatures.Mobs
@@ -30,6 +31,7 @@ namespace PixelCrew.Creatures.Mobs
             _creature = GetComponent<Creature>();
             _animator = GetComponent<Animator>();
             _patrol = GetComponent<Patrol>();
+          
         }
 
         private void Start()
@@ -43,9 +45,12 @@ namespace PixelCrew.Creatures.Mobs
             
             _target = go;
             
+           
+            
             StartState(AgroToHero());
         }
 
+     
         private IEnumerator AgroToHero()
         {
             LookAtHero();

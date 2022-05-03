@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4977995933091961192}
   m_Layer: 0
   m_Name: WoodSpikeSinusoidaProjectileRight
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   _tag: 
   _layer:
     serializedVersion: 2
-    m_Bits: 164097
+    m_Bits: 164096
   _action:
     m_PersistentCalls:
       m_Calls:

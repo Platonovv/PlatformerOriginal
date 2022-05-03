@@ -293,7 +293,7 @@ MonoBehaviour:
   _tag: Untagged
   _layer:
     serializedVersion: 2
-    m_Bits: 33024
+    m_Bits: 65792
   _action:
     m_PersistentCalls:
       m_Calls:

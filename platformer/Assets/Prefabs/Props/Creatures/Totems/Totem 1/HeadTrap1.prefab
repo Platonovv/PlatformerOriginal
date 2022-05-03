@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f478b453a54d43547b3d39e27da8f7f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.6, y: 0.32}
@@ -301,7 +301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3793279025495062795}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.49, y: -0.13000011, z: 0.87890625}
+  m_LocalPosition: {x: 0.51, y: -0.13000011, z: 0.87890625}
   m_LocalScale: {x: 1.12743, y: 1.2174699, z: 1}
   m_Children: []
   m_Father: {fileID: 9094300121909456376}
@@ -394,7 +394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4595045034916861010}
   - component: {fileID: 7463894532427850374}
-  m_Layer: 18
+  m_Layer: 0
   m_Name: WoodSpikeThrow
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
@@ -409,7 +409,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4226800815782297941}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.62, y: -0.12400007, z: 0.87890625}
+  m_LocalPosition: {x: 0.88, y: -0.12400007, z: 0.87890625}
   m_LocalScale: {x: 1.12743, y: 1.2174699, z: 1}
   m_Children: []
   m_Father: {fileID: 9094300121909456376}
@@ -428,7 +428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 4595045034916861010}
-  _prefab: {fileID: 1527384416053075880, guid: 3d52bb74de032334a9846cf3a5459aaa, type: 3}
+  _prefab: {fileID: 1527384416053075880, guid: 42fc5ab8b4a07374294b180af447b307, type: 3}
 --- !u!1 &7342446756005308037
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +475,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.7561102, y: 0.5}
+  m_Offset: {x: 2.5144982, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -486,7 +486,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.51222, y: 2}
+  m_Size: {x: 4.7553434, y: 2}
   m_EdgeRadius: 0
 --- !u!114 &1240097209815749344
 MonoBehaviour:

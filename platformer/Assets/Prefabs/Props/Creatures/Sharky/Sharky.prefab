@@ -57,7 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 167995143}
   - component: {fileID: 167995144}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: ObastacleCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 33025
+    m_Bits: 65792
   _isTouchingLayer: 0
   _target: {fileID: 450291447}
 --- !u!1 &450291446
@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 450291447}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,6 +126,66 @@ Transform:
   m_Father: {fileID: 167995143}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &456860788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 456860789}
+  m_Layer: 0
+  m_Name: point 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &456860789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456860788}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.7800016, y: -0.41999856, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 444909684101719977}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1519945651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1519945652}
+  m_Layer: 0
+  m_Name: point 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1519945652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519945651}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.5600026, y: -0.3900004, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 444909684101719977}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &444909684101719976
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +204,8 @@ GameObject:
   - component: {fileID: 5758524390908828118}
   - component: {fileID: 325558827}
   - component: {fileID: 1837546647}
+  - component: {fileID: 357835198}
+  - component: {fileID: 889586814}
   m_Layer: 0
   m_Name: Sharky
   m_TagString: Enemy
@@ -173,6 +235,8 @@ Transform:
   - {fileID: 157356105}
   - {fileID: 2223829868555694843}
   - {fileID: 167995143}
+  - {fileID: 1519945652}
+  - {fileID: 456860789}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -345,6 +409,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 889586814}
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Die
+          m_BoolArgument: 1
+        m_CallState: 2
   _onHeal:
     m_PersistentCalls:
       m_Calls: []
@@ -427,6 +502,40 @@ MonoBehaviour:
   _obstacleCheck: {fileID: 167995144}
   _creature: {fileID: 5758524390908828118}
   _direction: 1
+--- !u!114 &357835198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444909684101719976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55fce89383c342378f1a43286c48fd02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _points:
+  - {fileID: 1519945652}
+  - {fileID: 456860789}
+  _treshold: 2
+--- !u!114 &889586814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444909684101719976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadf51e6ad6a4b64a6dd33152d8e4e76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _source: {fileID: 0}
+  _sounds:
+  - _id: Melee
+    _clip: {fileID: 8300000, guid: a69d322bd3e28bb4ca6069766bad1bb6, type: 3}
+  - _id: Die
+    _clip: {fileID: 8300000, guid: 5da039ae7e4f45448a0b53d82b141ef3, type: 3}
 --- !u!1 &444909684218330663
 GameObject:
   m_ObjectHideFlags: 0
@@ -791,7 +900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3513213254339105370}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -927,7 +1036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2223829868555694843}
   - component: {fileID: 5707575190531451726}
-  m_Layer: 0
+  m_Layer: 20
   m_Name: PatrolGroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -963,7 +1072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 65792
   _isTouchingLayer: 0
   _target: {fileID: 3513213254339105370}
 --- !u!1 &6711245221556112296
