@@ -33,7 +33,7 @@ namespace PixelCrew.UI.MainMenu
         
         public void OnStartGameRestart()
         {
-            _closeAction = () => { SceneManager.LoadScene("Level2"); };
+            _closeAction = () => { SceneManager.LoadScene("Level1"); };
             Close();
         }
         
