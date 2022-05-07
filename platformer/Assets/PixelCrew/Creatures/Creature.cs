@@ -14,6 +14,8 @@ namespace PixelCrew.Creatures
         [SerializeField] protected float _speed;
         [SerializeField] protected float _jumpSpeed;
         [SerializeField] protected float _damageVelocity;
+        [SerializeField] protected float _Dash;
+        
         
         
         [Header("Checkers")]
@@ -70,6 +72,7 @@ namespace PixelCrew.Creatures
             UpdateSpriteDirection(Direction);
         }
         
+       
         protected virtual float CalculateYVelocity()
         {
             var yVelocity = Rigidbody.velocity.y;
@@ -85,7 +88,6 @@ namespace PixelCrew.Creatures
                 _isJumping = true;
                 
                 var isFalling = Rigidbody.velocity.y <= 0.001f;
-                if (!isFalling) return yVelocity;
                 yVelocity = isFalling ? CalculateJumpVelocity(yVelocity) : yVelocity;
             }
             else if (Rigidbody.velocity.y > 0 && _isJumping)

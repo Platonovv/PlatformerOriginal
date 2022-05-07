@@ -1,5 +1,6 @@
 ﻿using PixelCrew.Model.Data;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace PixelCrew.Model
 {
@@ -13,6 +14,8 @@ namespace PixelCrew.Model
 
         private void Awake()
         {
+            LoadHUD();
+            
             if (IsSessionExit())
             {
                 DestroyImmediate(gameObject);
@@ -22,6 +25,11 @@ namespace PixelCrew.Model
                 Save();
                 DontDestroyOnLoad(this);
             }
+        }
+
+        private void LoadHUD()
+        {
+            SceneManager.LoadScene("HUD", LoadSceneMode.Additive);
         }
 
         private bool IsSessionExit()

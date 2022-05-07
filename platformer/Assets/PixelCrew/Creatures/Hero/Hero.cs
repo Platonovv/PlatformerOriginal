@@ -23,13 +23,13 @@ namespace PixelCrew.Creatures.Hero
       
       [SerializeField] private float _slamDownVelocity;
       [SerializeField] private float _interactionRadius;
-      
-   
+
 
       [SerializeField] private float _groundCheckRadius;
       [SerializeField] private Vector3 _groundCheckPositiondDelta;
 
       [SerializeField] private Cooldown _throwCooldown;
+      [SerializeField] private Cooldown _DashCooldown;
       [SerializeField] private AnimatorController _armed;
       [SerializeField] private AnimatorController _disarmed;
 
@@ -76,7 +76,7 @@ namespace PixelCrew.Creatures.Hero
          _session.Data.Inventory.OnChanged += AnotherHandler;
 
          
-         health.SetHealth(_session.Data.Hp);
+         health.SetHealth(_session.Data.Hp.Value);
          UpdateHeroWeapon();
       }
 
@@ -100,7 +100,7 @@ namespace PixelCrew.Creatures.Hero
 
       public void OnHealthChanged(int currentHealth)
       {
-         _session.Data.Hp = currentHealth;
+         _session.Data.Hp.Value = currentHealth;
       }
       
 
@@ -123,20 +123,7 @@ namespace PixelCrew.Creatures.Hero
          Animator.SetBool(IsOnWall,_isOnWall);
       }
 
-      private void FixedUpdate()
-      {
-         var xVelocity = Direction.x * _speed;
-         var yVelocity = CalculateYVelocity();
-         Rigidbody.velocity = new Vector2(xVelocity, yVelocity);
-
-
-         Animator.SetBool(IsGroundKey, IsGrounded);
-         Animator.SetBool(IsRunning, Direction.x != 0);
-         Animator.SetFloat(VerticalVelocity, Rigidbody.velocity.y);
-
-
-         UpdateSpriteDirection(Direction);
-      }
+      
 
 
       protected override float CalculateYVelocity()
@@ -277,7 +264,7 @@ namespace PixelCrew.Creatures.Hero
          if (BottleCount >= 1)
          {
             var currentHealth = 5;
-            _session.Data.Hp += currentHealth;
+            _session.Data.Hp.Value += currentHealth;
             Animator.SetTrigger(PotionKey);
             _session.Data.Inventory.Remove("Bottle", 1);
          }
@@ -298,6 +285,18 @@ namespace PixelCrew.Creatures.Hero
          Animator.SetTrigger(ThrowKey);
          _throwCooldown.Reset();
 
+      }
+
+      public void Dash()
+      {
+         if (_DashCooldown.IsReady)
+         {
+            var newPosition = Rigidbody.position + new Vector2(_Dash * transform.localScale.x, 0);
+            Rigidbody.MovePosition(newPosition);
+            
+            _DashCooldown.Reset();
+         }
+         
       }
    }
 }

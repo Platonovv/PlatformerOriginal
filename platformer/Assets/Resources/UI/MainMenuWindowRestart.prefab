@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 816601547875347627}
   - component: {fileID: 816601547875347624}
   - component: {fileID: 816601547875347625}
+  - component: {fileID: 7398307611074831482}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -134,6 +135,19 @@ MonoBehaviour:
         m_CallState: 2
   _normal: {fileID: 816601548099520829}
   _pressed: {fileID: 816601549465832240}
+--- !u!114 &7398307611074831482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816601547875347623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f918831dfd4a47c199ff3ce10ee5c74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 1dd82a7490d5eee4189f95d801926c07, type: 3}
 --- !u!1 &816601548099520829
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +303,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: EXIT
+  m_Text: BACK
 --- !u!1 &816601548758922716
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,7 +548,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: EXIT
+  m_Text: BACK
 --- !u!1 &816601549352898536
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,6 +561,7 @@ GameObject:
   - component: {fileID: 816601549352898540}
   - component: {fileID: 816601549352898541}
   - component: {fileID: 816601549352898538}
+  - component: {fileID: 472035171714878561}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -669,6 +684,19 @@ MonoBehaviour:
         m_CallState: 2
   _normal: {fileID: 816601549656453434}
   _pressed: {fileID: 816601549156374959}
+--- !u!114 &472035171714878561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816601549352898536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f918831dfd4a47c199ff3ce10ee5c74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 1dd82a7490d5eee4189f95d801926c07, type: 3}
 --- !u!1 &816601549465832240
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +865,7 @@ GameObject:
   - component: {fileID: 816601549687738368}
   - component: {fileID: 816601549687738369}
   - component: {fileID: 816601549687738430}
+  - component: {fileID: 5344541505199932368}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -947,7 +976,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8506449042770093835}
-        m_MethodName: OnExit
+        m_MethodName: Close
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -959,6 +988,19 @@ MonoBehaviour:
         m_CallState: 2
   _normal: {fileID: 816601549316790817}
   _pressed: {fileID: 816601548143655119}
+--- !u!114 &5344541505199932368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816601549687738428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f918831dfd4a47c199ff3ce10ee5c74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: 1dd82a7490d5eee4189f95d801926c07, type: 3}
 --- !u!1 &816601549691862620
 GameObject:
   m_ObjectHideFlags: 0
