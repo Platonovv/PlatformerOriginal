@@ -3,6 +3,7 @@ using PixelCrew.Components;
 using PixelCrew.Components.Audio;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.GoBased;
+using PixelCrew.UI.HUD;
 using UnityEngine;
 
 namespace PixelCrew.Creatures
@@ -15,9 +16,8 @@ namespace PixelCrew.Creatures
         [SerializeField] protected float _jumpSpeed;
         [SerializeField] protected float _damageVelocity;
         [SerializeField] protected float _Dash;
-        
-        
-        
+
+
         [Header("Checkers")]
         
         [SerializeField] protected LayerMask _groundLayer;
@@ -38,6 +38,9 @@ namespace PixelCrew.Creatures
         protected static readonly int Hit = Animator.StringToHash("hit");
         private static readonly int AttackKey = Animator.StringToHash("attack");
         private float _damageJumpSpeed;
+        private int _currentHealth;
+
+        
 
         protected virtual void Awake()
         {
@@ -148,4 +151,6 @@ namespace PixelCrew.Creatures
             Sounds.Play("Melee");
         }
     }
+
+   
 }

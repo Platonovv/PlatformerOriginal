@@ -235,6 +235,7 @@ MonoBehaviour:
   _speed: 3
   _jumpSpeed: 12
   _damageVelocity: 20
+  _Dash: 5
   _groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -252,6 +253,8 @@ MonoBehaviour:
   _groundCheckPositiondDelta: {x: 0, y: 0, z: 0}
   _throwCooldown:
     _value: 1
+  _DashCooldown:
+    _value: 2
   _armed: {fileID: 9100000, guid: be047b7e9a9c7244dacc5b07795f2a21, type: 2}
   _disarmed: {fileID: 9100000, guid: ddd98b1fb1c498f4dae4cbc98e35ee7a, type: 2}
   _superThrowCooldown:
@@ -259,6 +262,7 @@ MonoBehaviour:
   _superThrowParticles: 3
   _superThrowDelay: 0.2
   _hitDrop: {fileID: 3008030033105757258}
+  _throwSpawner: {fileID: 4486315113554584891}
 --- !u!114 &444909684101719973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,6 +379,36 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 92d16113-496c-4250-9069-54733f898701
     m_ActionName: Hero/UsePotion[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 444909684101719975}
+        m_MethodName: OnDash
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a84e1b99-2f03-46bf-9f20-fe4192bd8625
+    m_ActionName: Hero/Dash[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 444909684101719975}
+        m_MethodName: OnNextItem
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fbe2b6b3-7d56-483a-9e11-9690430f4309
+    m_ActionName: Hero/NextItem[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -587,7 +621,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aadf51e6ad6a4b64a6dd33152d8e4e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 0}
   _sounds:
   - _id: Jump
     _clip: {fileID: 8300000, guid: 990ddd9cbc49903418a0d5902ee8e37b, type: 3}
@@ -1085,7 +1118,7 @@ GameObject:
   - component: {fileID: 2378336829265357077}
   - component: {fileID: 4486315113554584891}
   m_Layer: 17
-  m_Name: ThrowSwordSpawnPosition
+  m_Name: ThrowSpawnPosition
   m_TagString: Untagged
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0

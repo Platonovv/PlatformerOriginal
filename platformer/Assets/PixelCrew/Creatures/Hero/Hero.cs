@@ -6,7 +6,9 @@ using PixelCrew.Components.GoBased;
 using PixelCrew.Components.Health;
 using PixelCrew.Model;
 using PixelCrew.Model.Data;
+using PixelCrew.Model.Definitions;
 using PixelCrew.Utils;
+using TMPro;
 using UnityEditor.Animations;
 using UnityEngine;
 using Random = System.Random;
@@ -40,6 +42,8 @@ namespace PixelCrew.Creatures.Hero
       [SerializeField] private int _superThrowParticles;
       [SerializeField] private float _superThrowDelay;
       [SerializeField] private ProbabilityDropComponent _hitDrop;
+      [SerializeField] private SpawnComponent _throwSpawner;
+
 
 
       private static readonly int ThrowKey = Animator.StringToHash("throw");
@@ -53,12 +57,27 @@ namespace PixelCrew.Creatures.Hero
       
       private GameSession _session;
       private float _defaultGravityScale;
-      
+
+      private const string SwordId = "Sword";
+      private const string BottleId = "BottleGreenHeal5";
+      private const string Bottle10Id = "BottleHeal10";
 
       private int CoinsCount => _session.Data.Inventory.Count("Coin");
-      private int SwordCount => _session.Data.Inventory.Count("Sword");
+      private int SwordCount => _session.Data.Inventory.Count(SwordId);
+
+      private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
       
-      private int BottleCount => _session.Data.Inventory.Count("Bottle");
+      private bool CanThrow
+      {
+         get
+         {
+            if (SelectedItemId == SwordId)
+               return SwordCount > 1;
+            
+            var def = DefsFacade.I.Items.Get(SelectedItemId);
+            return def.HasTag(ItemTag.Throwable);
+         }
+      }
 
 
       protected override void Awake()
@@ -94,7 +113,7 @@ namespace PixelCrew.Creatures.Hero
 
       private void OnInventoryChanged(string id, int value)
       {
-         if(id == "Sword")
+         if(id == SwordId)
             UpdateHeroWeapon();
       }
 
@@ -144,8 +163,8 @@ namespace PixelCrew.Creatures.Hero
 
       protected override float CalculateJumpVelocity(float yVelocity)
       {
-          if (! IsGrounded && _allowDoubleJump && !_isOnWall)
-         {
+          if (! IsGrounded && _allowDoubleJump && !_isOnWall) 
+          {
             _allowDoubleJump = false;
             DoJumpVfx();
             return _jumpSpeed;
@@ -229,7 +248,10 @@ namespace PixelCrew.Creatures.Hero
       {
          if (_superThrow)
          {
-            var numThrows = Mathf.Min(_superThrowParticles, SwordCount - 1);
+            var throwableCount = _session.Data.Inventory.Count(SelectedItemId);
+            var possibleCount = SelectedItemId == SwordId ? throwableCount - 1 : throwableCount;
+            
+            var numThrows = Mathf.Min(_superThrowParticles, possibleCount);
             StartCoroutine(DoSuperThrow(numThrows));
          }
          else
@@ -252,23 +274,40 @@ namespace PixelCrew.Creatures.Hero
       private void ThrowAndRemoveFromInventory()
       {
          Sounds.Play("Range");
-         _particles.Spawn("Throw");
-         _session.Data.Inventory.Remove("Sword", 1);
+         
+         
+         var throwableId = _session.QuickInventory.SelectedItem.Id;
+         var throwableDef = DefsFacade.I.Throwable.Get(throwableId);
+         _throwSpawner.SetPrefab(throwableDef.Projectile);
+         _throwSpawner.Spawn();
+   
+         _session.Data.Inventory.Remove(throwableId, 1);
       }
       
       
       
       public void UsePotion()
       {
-         
-         if (BottleCount >= 1)
+         if (SelectedItemId == BottleId)
          {
+            var def = DefsFacade.I.Items.Get(SelectedItemId);
+            def.HasTag(ItemTag.Usable);
             var currentHealth = 5;
             _session.Data.Hp.Value += currentHealth;
-            Animator.SetTrigger(PotionKey);
-            _session.Data.Inventory.Remove("Bottle", 1);
+            GetComponent<HealthComponent>().ChangeHealth(+5);
+            _session.Data.Inventory.Remove(BottleId, 1);
          }
 
+         else
+         {
+            if (SelectedItemId != Bottle10Id) return;
+            var def = DefsFacade.I.Items.Get(SelectedItemId);
+            def.HasTag(ItemTag.Usable);
+            var currentHealth = 10;
+            _session.Data.Hp.Value += currentHealth;
+            GetComponent<HealthComponent>().ChangeHealth(+10);
+            _session.Data.Inventory.Remove(Bottle10Id, 1);
+         } 
       }
 
       public void StartThrowing()
@@ -278,7 +317,7 @@ namespace PixelCrew.Creatures.Hero
 
       public void PerformThrowing()
       {
-         if (!_throwCooldown.IsReady || SwordCount <= 1) return;
+         if (!_throwCooldown.IsReady || !CanThrow) return;
 
          if (_superThrowCooldown.IsReady) _superThrow = true;
 
@@ -297,6 +336,11 @@ namespace PixelCrew.Creatures.Hero
             _DashCooldown.Reset();
          }
          
+      }
+
+      public void NextItem()
+      {
+         _session.QuickInventory.SetNextItem();
       }
    }
 }

@@ -53,8 +53,6 @@ namespace PixelCrew.Creatures.Hero
         {
             _hero.UsePotion();
         }
-        
-        
     }
     
     public void OnDash(InputAction.CallbackContext context)
@@ -64,6 +62,14 @@ namespace PixelCrew.Creatures.Hero
             _hero.Dash();
         }
         
+        
+    }
+    
+    
+    public void OnNextItem(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            _hero.NextItem();
         
     }
  }
