@@ -10,7 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 52b4fe9fa8cd4f58ae7ee606ee898530, type: 3}
-  m_Name: Dialog
+  m_Name: Crabby_GetGemObtained
   m_EditorClassIdentifier: 
   _data:
-    _sentences: []
+    _sentences:
+    - And now The Miracle!
+    - I have a Gem...
+    - And you are not..haha..
+    - Take the key and open the door!

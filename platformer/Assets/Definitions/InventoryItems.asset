@@ -21,7 +21,7 @@ MonoBehaviour:
     _tags: 010000000000000002000000
   - _id: Key
     _icon: {fileID: 21300000, guid: 84e1366128beb2b4b86570dc0f7be7c4, type: 3}
-    _tags: 
+    _tags: 0000000001000000
   - _id: BottleGreenHeal5
     _icon: {fileID: 21300000, guid: 8a1ac0005f5b68f4e9d0b444d75b4c02, type: 3}
     _tags: 0000000001000000
@@ -30,4 +30,7 @@ MonoBehaviour:
     _tags: 000000000100000002000000
   - _id: BottleHeal10
     _icon: {fileID: 21300000, guid: dc478e17aeadb2446a0b734c4a2c0a91, type: 3}
+    _tags: 0000000001000000
+  - _id: GreenGem
+    _icon: {fileID: 21300000, guid: f8bc35cd8dd6da544b93b50be92e4b7b, type: 3}
     _tags: 0000000001000000
