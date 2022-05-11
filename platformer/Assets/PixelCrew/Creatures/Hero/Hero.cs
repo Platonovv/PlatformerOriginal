@@ -296,6 +296,7 @@ namespace PixelCrew.Creatures.Hero
             _session.Data.Hp.Value += currentHealth;
             GetComponent<HealthComponent>().ChangeHealth(+5);
             _session.Data.Inventory.Remove(BottleId, 1);
+            
          }
 
          else
