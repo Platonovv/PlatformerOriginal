@@ -1,4 +1,5 @@
 ﻿using System;
+using PixelCrew.Utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,19 +11,8 @@ namespace PixelCrew.UI.MainMenu
         
         public void OnShowSettings()
         {
-            var window = Resources.Load <GameObject>("UI/SettingsWindow");
-            var canvas = FindObjectOfType<Canvas>();
-            Instantiate(window, canvas.transform);
+            WindowUtils.CreateWindow("UI/SettingsWindow");
         }
-
-        public void OnShowMainWindowRestart()
-        {
-            var window = Resources.Load <GameObject>("UI/MainMenuWindowRestart");
-            var canvas = FindObjectOfType<Canvas>();
-            Instantiate(window, canvas.transform);
-        }
-        
-        
 
         public void OnStartGame()
         {

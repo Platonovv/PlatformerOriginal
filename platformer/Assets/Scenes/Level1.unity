@@ -6222,7 +6222,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -379.2487, y: -371.30374, z: 96.434746}
+  m_LocalPosition: {x: -383.66867, y: -381.53375, z: 96.434746}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 799752983}
@@ -7105,12 +7105,12 @@ PrefabInstance:
     - target: {fileID: 444909684101719977, guid: 387c527f5784f564ea526c0cb924981a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.17
+      value: -29.59
       objectReference: {fileID: 0}
     - target: {fileID: 444909684101719977, guid: 387c527f5784f564ea526c0cb924981a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.24
+      value: -11.47
       objectReference: {fileID: 0}
     - target: {fileID: 444909684101719977, guid: 387c527f5784f564ea526c0cb924981a,
         type: 3}
@@ -10397,7 +10397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 804380388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.16, y: -1.24, z: -10}
+  m_LocalPosition: {x: -29.58, y: -11.47, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1522375701}
@@ -11671,7 +11671,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965246616}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.4799995, y: 0.65999997, z: 0}
+  m_LocalPosition: {x: -1.9400005, y: -9.570001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 758174203}
@@ -15111,6 +15111,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
     type: 3}
   m_PrefabInstance: {fileID: 1245591310}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1245796855 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1881810245109567218, guid: 4314bfc161c858e4b9fbd4c53e238961,
+    type: 3}
+  m_PrefabInstance: {fileID: 1881810245397088352}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1245796856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245796855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12c9546d93f47c6addae724141cb089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    DialogText: Use helm?
+    Option:
+    - Text: 1.Yes
+      OnSelect:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1245796861}
+            m_MethodName: SetTrigger
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: interact
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 1245796858}
+            m_MethodName: SetTimer
+            m_Mode: 3
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Text: 2.No
+      OnSelect:
+        m_PersistentCalls:
+          m_Calls: []
+--- !u!114 &1245796858 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1451039691, guid: 4314bfc161c858e4b9fbd4c53e238961,
+    type: 3}
+  m_PrefabInstance: {fileID: 1881810245397088352}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245796855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b393b00c2af845de9f417cc3963df797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &1245796861 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4869652704265944824, guid: 4314bfc161c858e4b9fbd4c53e238961,
+    type: 3}
+  m_PrefabInstance: {fileID: 1881810245397088352}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1248143262 stripped
 Transform:
@@ -59284,6 +59353,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 810077809}
     m_Modifications:
+    - target: {fileID: 837273235, guid: 4314bfc161c858e4b9fbd4c53e238961, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 837273235, guid: 4314bfc161c858e4b9fbd4c53e238961, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 837273235, guid: 4314bfc161c858e4b9fbd4c53e238961, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1245796856}
+    - target: {fileID: 837273235, guid: 4314bfc161c858e4b9fbd4c53e238961, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Show
+      objectReference: {fileID: 0}
     - target: {fileID: 1451039691, guid: 4314bfc161c858e4b9fbd4c53e238961, type: 3}
       propertyPath: _timers.Array.data[1].OnTimesUp.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
