@@ -21,10 +21,9 @@ namespace PixelCrew.UI.MainMenu
         }
         
         
-        public void OnStartGameRestart()
+        public void OnLanguages()
         {
-            _closeAction = () => { SceneManager.LoadScene("Level1"); };
-            Close();
+            WindowUtils.CreateWindow("UI/LocalizationWindow");
         }
         
 
