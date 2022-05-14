@@ -15,16 +15,22 @@ MonoBehaviour:
   _url: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQU_vZtOQ0jA1DHXDdOSBibuhPkypG5o_ROjwakghyaAQD0mmOYfKxOHFLcsB0aLc-pMD2R_86eoAUu/pub?gid=0&single=true&output=tsv        '
   _localeItems:
   - Key: menu_title
-    Value: "menu\r"
+    Value: "Main Menu\r"
   - Key: button_start
-    Value: "start\r"
+    Value: "Start\r"
   - Key: botton_option
-    Value: "options\r"
+    Value: "Options\r"
   - Key: button_exit
-    Value: "exit\r"
+    Value: "Exit\r"
   - Key: selected_language
     Value: "Selected language is {0}\r"
   - Key: button_back
-    Value: "back\r"
+    Value: "Back\r"
   - Key: botton_locales
-    Value: languages
+    Value: "Languages\r"
+  - Key: botton_restart
+    Value: "Restart\r"
+  - Key: botton_music
+    Value: "Music\r"
+  - Key: botton_menu
+    Value: Menu

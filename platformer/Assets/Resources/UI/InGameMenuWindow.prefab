@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 816601548099520828}
   - component: {fileID: 816601548099520830}
   - component: {fileID: 816601548099520831}
+  - component: {fileID: 5738653844244600142}
   m_Layer: 5
   m_Name: NormalText
   m_TagString: Untagged
@@ -226,6 +227,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: RESTART
+--- !u!114 &5738653844244600142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816601548099520829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a28cb19a3f4d27a78de2c25efd1b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: botton_restart
+  _capitalize: 1
 --- !u!1 &816601548143655119
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +252,7 @@ GameObject:
   - component: {fileID: 816601548143655118}
   - component: {fileID: 816601548143655120}
   - component: {fileID: 816601548143655121}
+  - component: {fileID: 7873516848113246105}
   m_Layer: 5
   m_Name: 'PressedText '
   m_TagString: Untagged
@@ -304,6 +320,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: BACK
+--- !u!114 &7873516848113246105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816601548143655119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a28cb19a3f4d27a78de2c25efd1b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_back
+  _capitalize: 1
 --- !u!1 &816601548758922716
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,6 +434,7 @@ GameObject:
   - component: {fileID: 816601549156374958}
   - component: {fileID: 816601549156374960}
   - component: {fileID: 816601549156374961}
+  - component: {fileID: 1331755212913937823}
   m_Layer: 5
   m_Name: 'PressedText '
   m_TagString: Untagged
@@ -471,6 +502,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: OPTIONS
+--- !u!114 &1331755212913937823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816601549156374959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a28cb19a3f4d27a78de2c25efd1b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: botton_option
+  _capitalize: 1
 --- !u!1 &816601549316790817
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,6 +527,7 @@ GameObject:
   - component: {fileID: 816601549316790816}
   - component: {fileID: 816601549316790818}
   - component: {fileID: 816601549316790819}
+  - component: {fileID: 237758579698156562}
   m_Layer: 5
   m_Name: NormalText
   m_TagString: Untagged
@@ -549,6 +595,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: BACK
+--- !u!114 &237758579698156562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816601549316790817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a28cb19a3f4d27a78de2c25efd1b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_back
+  _capitalize: 1
 --- !u!1 &816601549352898536
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,6 +768,7 @@ GameObject:
   - component: {fileID: 816601549465832243}
   - component: {fileID: 816601549465832245}
   - component: {fileID: 816601549465832242}
+  - component: {fileID: 3554570507215701450}
   m_Layer: 5
   m_Name: 'PressedText '
   m_TagString: Untagged
@@ -775,6 +836,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: RESTART
+--- !u!114 &3554570507215701450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816601549465832240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a28cb19a3f4d27a78de2c25efd1b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: botton_restart
+  _capitalize: 1
 --- !u!1 &816601549656453434
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,6 +861,7 @@ GameObject:
   - component: {fileID: 816601549656453437}
   - component: {fileID: 816601549656453439}
   - component: {fileID: 816601549656453436}
+  - component: {fileID: 5333409917695226747}
   m_Layer: 5
   m_Name: NormalText
   m_TagString: Untagged
@@ -853,6 +929,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: OPTIONS
+--- !u!114 &5333409917695226747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816601549656453434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a28cb19a3f4d27a78de2c25efd1b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: botton_option
+  _capitalize: 1
 --- !u!1 &816601549687738428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,7 +1104,7 @@ GameObject:
   - component: {fileID: 5364109988746106625}
   - component: {fileID: 1591009961737120556}
   m_Layer: 5
-  m_Name: MainMenuWindowRestart
+  m_Name: InGameMenuWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1095,6 +1185,7 @@ GameObject:
   - component: {fileID: 816601549701261688}
   - component: {fileID: 816601549701261690}
   - component: {fileID: 816601549701261691}
+  - component: {fileID: 3976642520618236172}
   m_Layer: 5
   m_Name: Header
   m_TagString: Untagged
@@ -1118,8 +1209,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 2.28, y: -12}
-  m_SizeDelta: {x: 65.39902, y: 30}
+  m_AnchoredPosition: {x: 0.64, y: -12}
+  m_SizeDelta: {x: 83.216736, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &816601549701261690
 CanvasRenderer:
@@ -1150,18 +1241,32 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: dfc7050f99bc8ab4790e570f36d9a552, type: 3}
-    m_FontSize: 14
+    m_FontSize: 11
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: Main menu
+--- !u!114 &3976642520618236172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816601549701261689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a28cb19a3f4d27a78de2c25efd1b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: menu_title
+  _capitalize: 0
 --- !u!1 &816601549789957158
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,6 +1417,7 @@ GameObject:
   - component: {fileID: 5095179563715739379}
   - component: {fileID: 1641725618918951003}
   - component: {fileID: 7330352208444514972}
+  - component: {fileID: 8537954357275178953}
   m_Layer: 5
   m_Name: NormalText
   m_TagString: Untagged
@@ -1379,6 +1485,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: EXIT
+--- !u!114 &8537954357275178953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2804984242510031966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a28cb19a3f4d27a78de2c25efd1b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_exit
+  _capitalize: 1
 --- !u!1 &3812583037835891332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,6 +1510,7 @@ GameObject:
   - component: {fileID: 2218737990128257589}
   - component: {fileID: 3132004343070592451}
   - component: {fileID: 6154042846668224038}
+  - component: {fileID: 3650083040079813109}
   m_Layer: 5
   m_Name: 'PressedText '
   m_TagString: Untagged
@@ -1457,6 +1578,20 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: BACK
+--- !u!114 &3650083040079813109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3812583037835891332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1a28cb19a3f4d27a78de2c25efd1b1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: button_exit
+  _capitalize: 1
 --- !u!1 &9077551104294622712
 GameObject:
   m_ObjectHideFlags: 0

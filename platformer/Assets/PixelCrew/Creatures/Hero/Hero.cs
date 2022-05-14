@@ -295,7 +295,8 @@ namespace PixelCrew.Creatures.Hero
             var currentHealth = 5;
             _session.Data.Hp.Value += currentHealth;
             GetComponent<HealthComponent>().ChangeHealth(+5);
-            _session.Data.Inventory.Remove(BottleId, 1);
+             _session.Data.Inventory.Remove(BottleId, 1);
+            
             
          }
 
@@ -309,6 +310,9 @@ namespace PixelCrew.Creatures.Hero
             GetComponent<HealthComponent>().ChangeHealth(+10);
             _session.Data.Inventory.Remove(Bottle10Id, 1);
          } 
+         
+         Debug.Log($"Health changed, current Health : {_session.Data.Hp.Value}");
+
       }
 
       public void StartThrowing()
