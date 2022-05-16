@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb84ffc3a24949c098a36ce5f96c854e, type: 3}
-  m_Name: InventoryItems
+  m_Name: Items
   m_EditorClassIdentifier: 
-  _items:
+  _collection:
   - _id: Coin
     _icon: {fileID: 21300000, guid: 81cef53475ecf9f4189ab764abb80759, type: 3}
     _tags: 0000000001000000
@@ -24,13 +24,16 @@ MonoBehaviour:
     _tags: 0000000001000000
   - _id: BottleGreenHeal5
     _icon: {fileID: 21300000, guid: 8a1ac0005f5b68f4e9d0b444d75b4c02, type: 3}
-    _tags: 0000000001000000
+    _tags: 000000000100000003000000
   - _id: PearlProjectile
     _icon: {fileID: 21300000, guid: a8084e4c557695f4c9049b59aafc68a4, type: 3}
     _tags: 000000000100000002000000
   - _id: BottleHeal10
     _icon: {fileID: 21300000, guid: dc478e17aeadb2446a0b734c4a2c0a91, type: 3}
-    _tags: 0000000001000000
+    _tags: 000000000100000003000000
   - _id: GreenGem
     _icon: {fileID: 21300000, guid: f8bc35cd8dd6da544b93b50be92e4b7b, type: 3}
     _tags: 0000000001000000
+  - _id: SpeedUpPotion
+    _icon: {fileID: 21300000, guid: d63b346a71e8c064cad5afd83ad70572, type: 3}
+    _tags: 000000000100000003000000

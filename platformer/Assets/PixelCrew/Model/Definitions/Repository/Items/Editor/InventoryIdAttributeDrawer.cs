@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
 
-namespace PixelCrew.Model.Definitions.Editor
+namespace PixelCrew.Model.Definitions.Repository.Items.Editor
 {
     [CustomPropertyDrawer(typeof(InventoryIdAttribute))]
     public class InventoryIdAttributeDrawer : PropertyDrawer

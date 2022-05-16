@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _items: {fileID: 11400000, guid: fcdf109866555c644970399dfaabeadc, type: 2}
   _throwableItems: {fileID: 11400000, guid: 15281742b36cb414587d2c0cab8216af, type: 2}
+  _potions: {fileID: 11400000, guid: 0672fdf9283bff74e801cc7d2a592670, type: 2}
   _player: {fileID: 11400000, guid: 80542f89e451a734ba7a7e97f7ea502b, type: 2}

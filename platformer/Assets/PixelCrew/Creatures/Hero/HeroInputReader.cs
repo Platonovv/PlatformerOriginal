@@ -42,18 +42,18 @@ namespace PixelCrew.Creatures.Hero
 
         if (context.canceled)
         {
-            _hero.PerformThrowing();
+            _hero.UseInventory();
         }
         
     }
     
-    public void OnUsePotion(InputAction.CallbackContext context)
+    /*public void OnUsePotion(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            _hero.UsePotion();
+            _hero.UsePotionR();
         }
-    }
+    }*/
     
     public void OnDash(InputAction.CallbackContext context)
     {

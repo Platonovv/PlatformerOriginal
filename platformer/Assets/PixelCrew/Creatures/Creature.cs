@@ -62,7 +62,7 @@ namespace PixelCrew.Creatures
         
         private void FixedUpdate()
         {
-            var xVelocity = Direction.x * _speed;
+            var xVelocity = CalculateXVelocity();
             var yVelocity = CalculateYVelocity();
             Rigidbody.velocity = new Vector2(xVelocity, yVelocity);
 
@@ -74,7 +74,16 @@ namespace PixelCrew.Creatures
 
             UpdateSpriteDirection(Direction);
         }
-        
+
+        protected virtual float CalculateXVelocity()
+        {
+            return Direction.x * CalculateSpeed();
+        }
+
+        protected virtual float CalculateSpeed()
+        {
+            return _speed;
+        }
        
         protected virtual float CalculateYVelocity()
         {

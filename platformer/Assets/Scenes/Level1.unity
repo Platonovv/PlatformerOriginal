@@ -55349,8 +55349,14 @@ MonoBehaviour:
   _data:
     _inventory:
       _inventory:
-      - Id: Coin
+      - Id: BottleGreenHeal5
         Value: 1
+      - Id: Sword
+        Value: 5
+      - Id: BottleHeal10
+        Value: 1
+      - Id: SpeedUpPotion
+        Value: 5
     Hp:
       _value: 15
   _defaultCheckPoint: level1-checkpoint1

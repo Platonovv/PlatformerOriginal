@@ -7,10 +7,13 @@ using PixelCrew.Components.Health;
 using PixelCrew.Model;
 using PixelCrew.Model.Data;
 using PixelCrew.Model.Definitions;
+using PixelCrew.Model.Definitions.Repository;
+using PixelCrew.Model.Definitions.Repository.Items;
 using PixelCrew.Utils;
 using TMPro;
 using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Random = System.Random;
 
 namespace PixelCrew.Creatures.Hero
@@ -54,6 +57,9 @@ namespace PixelCrew.Creatures.Hero
       private bool _allowDoubleJump;
       private bool _isOnWall;
       private bool _superThrow;
+
+      private Cooldown _speedUpCooldown = new Cooldown();
+      private float _additionalSpeed;
       
       private GameSession _session;
       private float _defaultGravityScale;
@@ -286,7 +292,7 @@ namespace PixelCrew.Creatures.Hero
       
       
       
-      public void UsePotion()
+     /* public void UsePotionR()
       {
          if (SelectedItemId == BottleId)
          {
@@ -313,14 +319,62 @@ namespace PixelCrew.Creatures.Hero
          
          Debug.Log($"Health changed, current Health : {_session.Data.Hp.Value}");
 
-      }
+      }*/
 
       public void StartThrowing()
       {
          _superThrowCooldown.Reset();
       }
 
-      public void PerformThrowing()
+      public void UseInventory()
+      {
+         var isThrowable = _session.QuickInventory.SelectedDef.HasTag(ItemTag.Throwable);
+         if (IsSelectedItem(ItemTag.Throwable))
+         {
+            PerformThrowing();
+         }
+         
+         else if (IsSelectedItem(ItemTag.Potion))
+         {
+            UsePotion();
+         }
+      }
+
+      private void UsePotion()
+      {
+         var potion = DefsFacade.I.Potions.Get(SelectedItemId);
+
+         switch (potion.Effect)
+         {
+            case Effect.AddHp:
+               _session.Data.Hp.Value += (int) potion.Value;
+               Debug.Log($"Health changed, current Health : {_session.Data.Hp.Value}");
+               break;
+            case Effect.SpeedUp:
+               _speedUpCooldown.Value= _speedUpCooldown.TimeLasts + potion.Time;
+               _additionalSpeed = Mathf.Max(potion.Value, _additionalSpeed);
+               _speedUpCooldown.Reset();
+               Debug.Log($"Speed changed, current Speed : {_speed + _additionalSpeed} ");
+               break;
+         }
+         
+         _session.Data.Inventory.Remove(potion.Id, 1);
+      }
+
+      protected override float CalculateSpeed()
+      {
+         if (_speedUpCooldown.IsReady)
+            _additionalSpeed = 0f;
+         
+         return base.CalculateSpeed() + _additionalSpeed;
+      }
+
+      private bool IsSelectedItem(ItemTag tag)
+      {
+         return _session.QuickInventory.SelectedDef.HasTag(tag);
+
+      }
+      private void PerformThrowing()
       {
          if (!_throwCooldown.IsReady || !CanThrow) return;
 
@@ -328,7 +382,6 @@ namespace PixelCrew.Creatures.Hero
 
          Animator.SetTrigger(ThrowKey);
          _throwCooldown.Reset();
-
       }
 
       public void Dash()
