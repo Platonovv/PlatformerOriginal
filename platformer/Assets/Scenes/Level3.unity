@@ -10681,11 +10681,15 @@ MonoBehaviour:
       _inventory:
       - Id: Sword
         Value: 100
-      - Id: Coin
-        Value: 0
+      - Id: GreenGem
+        Value: 20
     Hp:
       _value: 10
-  _defaultCheckPoint: level3-checkpoint1
+    Perks:
+      _used:
+        _value: 
+      _unlocked: []
+  _defaultCheckPoint: level3-checkpoint7
 --- !u!4 &669647093
 Transform:
   m_ObjectHideFlags: 0
@@ -15325,6 +15329,121 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 127ea3850eab0784a96aa83d024c7efb, type: 3}
+--- !u!1001 &1039104628
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1836041616}
+    m_Modifications:
+    - target: {fileID: 1268510583, guid: 65021b537bcd5e8489e93e3e8c2f9b1e, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1184662315}
+    - target: {fileID: 1268510583, guid: 65021b537bcd5e8489e93e3e8c2f9b1e, type: 3}
+      propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Show
+      objectReference: {fileID: 0}
+    - target: {fileID: 397810975696030081, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: m_Radius
+      value: 1.7958727
+      objectReference: {fileID: 0}
+    - target: {fileID: 397810975696030081, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.57965183
+      objectReference: {fileID: 0}
+    - target: {fileID: 397810975696030081, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806750213342228688, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: m_Name
+      value: CrabbyNpsLie (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806750213342228691, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806750213342228691, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 47.635597
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806750213342228691, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 79.909706
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806750213342228691, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.47796822
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806750213342228691, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806750213342228691, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806750213342228691, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806750213342228691, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806750213342228691, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806750213342228691, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806750213342228691, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806750213342228692, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: _mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806750213342228692, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: _external
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806750213342228692, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: _bound._sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806750213342228695, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+        type: 3}
+      propertyPath: _required.Array.data[0].Id
+      value: GreenGem
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2806750213342228692, guid: 65021b537bcd5e8489e93e3e8c2f9b1e, type: 3}
+    - {fileID: 2806750213342228693, guid: 65021b537bcd5e8489e93e3e8c2f9b1e, type: 3}
+    - {fileID: 2806750213342228695, guid: 65021b537bcd5e8489e93e3e8c2f9b1e, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 65021b537bcd5e8489e93e3e8c2f9b1e, type: 3}
 --- !u!1001 &1041305507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17486,6 +17605,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77fa28c1311b44aca18feff8f4986ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1184662313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2806750213342228688, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1039104628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1184662314 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2806750213342228691, guid: 65021b537bcd5e8489e93e3e8c2f9b1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1039104628}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1184662315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184662313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f12c9546d93f47c6addae724141cb089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    DialogText: I can teach you a new perk
+    Option:
+    - Text: Ok!
+      OnSelect:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 1184662316}
+            m_MethodName: Show
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - Text: Not now
+      OnSelect:
+        m_PersistentCalls:
+          m_Calls: []
+--- !u!114 &1184662316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184662313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f567bd99942d4507be6567ebfddaf913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _path: UI/ManagePerksWindow
 --- !u!1001 &1194734248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24884,6 +25062,7 @@ Transform:
   - {fileID: 398215171}
   - {fileID: 1827940066}
   - {fileID: 93912008}
+  - {fileID: 1184662314}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
