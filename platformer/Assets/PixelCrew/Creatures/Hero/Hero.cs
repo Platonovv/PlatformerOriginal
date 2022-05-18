@@ -7,6 +7,7 @@ using PixelCrew.Components.Health;
 using PixelCrew.Model;
 using PixelCrew.Model.Data;
 using PixelCrew.Model.Definitions;
+using PixelCrew.Model.Definitions.Player;
 using PixelCrew.Model.Definitions.Repository;
 using PixelCrew.Model.Definitions.Repository.Items;
 using PixelCrew.Utils;
@@ -63,6 +64,7 @@ namespace PixelCrew.Creatures.Hero
       
       private GameSession _session;
       private float _defaultGravityScale;
+      private HealthComponent _health;
 
       private const string SwordId = "Sword";
       private const string BottleId = "BottleGreenHeal5";
@@ -96,13 +98,25 @@ namespace PixelCrew.Creatures.Hero
       private void Start()
       {
          _session = FindObjectOfType<GameSession>();
-         var health = GetComponent<HealthComponent>();
+         _health = GetComponent<HealthComponent>();
          _session.Data.Inventory.OnChanged += OnInventoryChanged;
          _session.Data.Inventory.OnChanged += AnotherHandler;
-
+         _session.StatsModel.OnUpgraded += OnHeroUpgraded;
          
-         health.SetHealth(_session.Data.Hp.Value);
+         _health.SetHealth(_session.Data.Hp.Value);
          UpdateHeroWeapon();
+      }
+
+      private void OnHeroUpgraded(StatId stateId)
+      {
+         switch (stateId)
+         {
+            case StatId.Hp:
+               var health =(int) _session.StatsModel.GetValue(stateId);
+               _session.Data.Hp.Value = health;
+               _health.SetHealth(health);
+               break;
+         }
       }
 
 
@@ -121,6 +135,7 @@ namespace PixelCrew.Creatures.Hero
       {
          if(id == SwordId)
             UpdateHeroWeapon();
+         
       }
 
       public void OnHealthChanged(int currentHealth)
@@ -365,8 +380,10 @@ namespace PixelCrew.Creatures.Hero
       {
          if (_speedUpCooldown.IsReady)
             _additionalSpeed = 0f;
-         
-         return base.CalculateSpeed() + _additionalSpeed;
+
+
+         var defaultSpeed = _session.StatsModel.GetValue(StatId.Speed) + _additionalSpeed;
+         return defaultSpeed + _additionalSpeed;
       }
 
       private bool IsSelectedItem(ItemTag tag)

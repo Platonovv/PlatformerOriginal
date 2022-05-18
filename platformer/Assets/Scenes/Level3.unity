@@ -10683,12 +10683,16 @@ MonoBehaviour:
         Value: 100
       - Id: GreenGem
         Value: 20
+      - Id: Coin
+        Value: 1000
     Hp:
       _value: 10
     Perks:
       _used:
         _value: 
       _unlocked: []
+    Levels:
+      _progress: []
   _defaultCheckPoint: level3-checkpoint7
 --- !u!4 &669647093
 Transform:
