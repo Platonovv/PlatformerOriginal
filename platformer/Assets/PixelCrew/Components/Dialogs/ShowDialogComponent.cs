@@ -16,12 +16,30 @@ namespace PixelCrew.Components.Dialogs
         private DialogBoxController _dialogBox;
         public void Show()
         {
-            if (_dialogBox == null)
-                _dialogBox = FindObjectOfType<DialogBoxController>();
-            
+            _dialogBox = FiindDialogController();
             _dialogBox.ShowDialog(Data);
         }
-        
+
+        private DialogBoxController FiindDialogController()
+        {
+            if (_dialogBox != null) return _dialogBox;
+
+            GameObject controllerGo;
+            switch (Data.Type)
+            {
+                case DialogType.Simple:
+                    controllerGo = GameObject.FindWithTag("SimpleDialog");
+                    break;
+                case DialogType.Personalized:
+                    controllerGo = GameObject.FindWithTag("PersonalizedDialog");
+                    break;
+                default:
+                    throw new AggregateException("Undefined dialog type");
+            }
+
+            return _dialogBox = controllerGo.GetComponent<DialogBoxController>();
+        }
+
         public void Show(DialogDef def)
         {
             _external = def;

@@ -918,7 +918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 339681feacc04ab089f323be242eb200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healDelta: -1
+  _healDelta: 0
 --- !u!1 &444909685136206199
 GameObject:
   m_ObjectHideFlags: 0

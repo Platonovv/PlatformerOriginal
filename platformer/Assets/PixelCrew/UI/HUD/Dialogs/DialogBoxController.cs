@@ -9,7 +9,7 @@ namespace PixelCrew.UI.HUD.Dialogs
 {
     public class DialogBoxController : MonoBehaviour
     {
-        [SerializeField] private Text  _text;
+        
         [SerializeField] private GameObject _container;
         [SerializeField] private Animator _animator;
 
@@ -19,6 +19,8 @@ namespace PixelCrew.UI.HUD.Dialogs
         [Header("Sounds")] [SerializeField] private AudioClip _typing;
         [SerializeField] private AudioClip _open;
         [SerializeField] private AudioClip _close;
+        
+        [Space] [SerializeField] protected DialogContent _content;
 
         private static readonly int IsOpen = Animator.StringToHash("IsOpen");
 
@@ -27,6 +29,8 @@ namespace PixelCrew.UI.HUD.Dialogs
         private int _currentSentence;
         private AudioSource _sfxSource;
         private Coroutine _typingRoutine;
+
+        protected Sentence CurrentSentence => _data.Sentences[_currentSentence];
 
         private void Start()
         {
@@ -37,7 +41,7 @@ namespace PixelCrew.UI.HUD.Dialogs
         {
             _data = data;
             _currentSentence = 0;
-            _text.text = string.Empty;
+            CurrentContent.Text.text = string.Empty;
             
             _container.SetActive(true);
             _sfxSource.PlayOneShot(_open);
@@ -45,19 +49,23 @@ namespace PixelCrew.UI.HUD.Dialogs
         }
         private IEnumerator TypeDialogText()
         {
-            _text.text = string.Empty;
-            var sentences = _data.Sentences[_currentSentence];
+            CurrentContent.Text.text = string.Empty;
+            var sentences = CurrentSentence;
+            CurrentContent.TrySetIcon(sentences.Icon);
             
-            foreach (var letter in sentences)
+            foreach (var letter in sentences.Valued)
             {
-                _text.text += letter;
+                CurrentContent.Text.text += letter;
                 _sfxSource.PlayOneShot(_typing);
                 yield return new WaitForSeconds(_textSpeed);
             }
 
             _typingRoutine = null;
         }
-        private void OnStartDialogAnimation()
+
+        protected virtual DialogContent CurrentContent => _content;
+        
+        protected virtual void OnStartDialogAnimation()
         {
             _typingRoutine = StartCoroutine(TypeDialogText());
         }
@@ -67,7 +75,7 @@ namespace PixelCrew.UI.HUD.Dialogs
             if(_typingRoutine == null) return;
 
             StopTypeAnimation();
-            _text.text = _data.Sentences[_currentSentence];
+            CurrentContent.Text.text = _data.Sentences[_currentSentence].Valued;
         }
         
 

@@ -5621,7 +5621,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -353.66867, y: -371.53375, z: 96.434746}
+  m_LocalPosition: {x: -353.65866, y: -371.53375, z: 96.434746}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 799752983}
@@ -6799,6 +6799,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 603818588}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &605158642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8137318308149961130, guid: 127ea3850eab0784a96aa83d024c7efb,
+    type: 3}
+  m_PrefabInstance: {fileID: 8137318308925784389}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &605158643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605158642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0dd4d1503f45059ef45ea28cb5f7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: destructable-barrel1
 --- !u!1001 &607945192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55363,6 +55382,8 @@ MonoBehaviour:
       _used:
         _value: 
       _unlocked: []
+    Levels:
+      _progress: []
   _defaultCheckPoint: level1-checkpoint1
 --- !u!4 &2086485059
 Transform:
@@ -55986,9 +56007,7 @@ MonoBehaviour:
   m_AnimatedTarget: {fileID: 2144893996}
   m_LayerIndex: 0
   m_ShowDebugText: 0
-  m_ChildCameras:
-  - {fileID: 965246617}
-  - {fileID: 2112055663}
+  m_ChildCameras: []
   m_Instructions:
   - m_FullHash: 492734158
     m_VirtualCamera: {fileID: 965246617}
@@ -56672,7 +56691,7 @@ PrefabInstance:
     - target: {fileID: 4489264129741743576, guid: 0302a942a069e7c4fabd746c445c2d3d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 32.27
+      value: 31.27
       objectReference: {fileID: 0}
     - target: {fileID: 4489264129741743576, guid: 0302a942a069e7c4fabd746c445c2d3d,
         type: 3}
@@ -57159,8 +57178,13 @@ MonoBehaviour:
   _mode: 0
   _bound:
     _sentences:
-    - You need a key..
-    - Try to search down floor.
+    - _valued: You need a key
+      _icon: {fileID: 0}
+      _side: 0
+    - _valued: Fined one at upper floor
+      _icon: {fileID: 0}
+      _side: 0
+    _type: 0
   _external: {fileID: 0}
 --- !u!1001 &7873948076720936773
 PrefabInstance:
@@ -57316,6 +57340,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DestructableBarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8137318308149961139, guid: 127ea3850eab0784a96aa83d024c7efb,
+        type: 3}
+      propertyPath: _state
+      value: 
+      objectReference: {fileID: 605158643}
+    - target: {fileID: 8137318308149961139, guid: 127ea3850eab0784a96aa83d024c7efb,
+        type: 3}
+      propertyPath: _storeState
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8137318308149961140, guid: 127ea3850eab0784a96aa83d024c7efb,
         type: 3}

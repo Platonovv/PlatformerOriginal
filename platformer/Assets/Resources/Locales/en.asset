@@ -41,4 +41,6 @@ MonoBehaviour:
   - Key: Range Damage
     Value: "Range Damage\r"
   - Key: level-up
-    Value: Upgrade
+    Value: "Upgrade\r"
+  - Key: some-icon
+    Value: some-icon/resource/1

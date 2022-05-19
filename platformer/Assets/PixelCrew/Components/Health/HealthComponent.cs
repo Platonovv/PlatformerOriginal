@@ -14,9 +14,9 @@ namespace PixelCrew.Components.Health
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] public HealthChangeEvent _onChange;
 
-        
-        
-        public int Health => _health;
+
+
+        public float Health => _health;
 
        
 

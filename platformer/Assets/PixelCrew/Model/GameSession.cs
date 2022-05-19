@@ -133,6 +133,17 @@ namespace PixelCrew.Model
             _trash.Dispose();
         }
 
-        
+        private readonly List<string> _removedItems = new List<string>();
+
+        public bool RestoreState(string id)
+        {
+            return _removedItems.Contains(id);
+        }
+
+        public void StoreState(string id)
+        {
+            if (!_removedItems.Contains(id))
+                _removedItems.Add(id);
+        }
     }
 }

@@ -107,12 +107,12 @@ namespace PixelCrew.Creatures.Hero
          UpdateHeroWeapon();
       }
 
-      private void OnHeroUpgraded(StatId stateId)
+      private void OnHeroUpgraded(StatId statId)
       {
-         switch (stateId)
+         switch (statId)
          {
             case StatId.Hp:
-               var health =(int) _session.StatsModel.GetValue(stateId);
+               var health =(int) _session.StatsModel.GetValue(statId);
                _session.Data.Hp.Value = health;
                _health.SetHealth(health);
                break;
