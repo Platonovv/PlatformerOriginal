@@ -21,6 +21,7 @@ namespace PixelCrew.Model
         
         private readonly CompositeDisposables _trash = new CompositeDisposables();
         public QuickInventoryModel QuickInventory { get; private set; }
+        public BigInventoryModel BigInventory { get; private set; }
         public PerksModel PerksModel { get; private set; }
         public StatsModel StatsModel { get; private set; }
 
@@ -72,6 +73,9 @@ namespace PixelCrew.Model
         {
             QuickInventory = new QuickInventoryModel(_data);
             _trash.Retain(QuickInventory);
+            
+            BigInventory = new BigInventoryModel(_data);
+            _trash.Retain(BigInventory);
 
             PerksModel = new PerksModel(_data);
             _trash.Retain(PerksModel);

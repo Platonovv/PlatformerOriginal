@@ -17,8 +17,6 @@ namespace PixelCrew.Components.Health
             _session = FindObjectOfType<GameSession>();
             _session.StatsModel.OnUpgraded += OnHeroHealDeltaUpgrade;
             OnHeroHealDeltaUpgrade(StatId.RangeDamage);
-
-            
         }
         
 
@@ -27,8 +25,7 @@ namespace PixelCrew.Components.Health
             var healthComponent = target.GetComponent<HealthComponent>();
             if (healthComponent != null)
             {
-                var defaultChangeHeal = (int)_session.StatsModel.GetValue(StatId.RangeDamage);
-                healthComponent.ChangeHealth(_healDelta/2 - defaultChangeHeal);
+                healthComponent.ChangeHealth(_healDelta);
                 Debug.Log($"{target.name}, health: {healthComponent.Health} ");
             }
             
@@ -41,7 +38,6 @@ namespace PixelCrew.Components.Health
                case StatId.RangeDamage:
                    var healDeltaUpgrade = (int) _session.StatsModel.GetValue(statId);
                    _healDelta = -healDeltaUpgrade;
-                   
                    break;
             }
         }

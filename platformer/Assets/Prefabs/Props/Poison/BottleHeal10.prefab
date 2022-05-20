@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 7873948077206278410}
+  _state: {fileID: 0}
 --- !u!114 &7873948077206278423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5394c05cfcde4c91b2085f9761167e31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: BottleGreenHeal10
+  _id: Coin
   _count: 1
 --- !u!114 &7873948077206278420
 MonoBehaviour:

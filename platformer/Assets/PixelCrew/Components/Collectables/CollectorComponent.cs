@@ -14,6 +14,11 @@ namespace PixelCrew.Components.Collectables
             _items.Add(new InventoryItemData(id) {Value = value});
         }
 
+        public void AddInInventoryBig(string id, int value)
+        {
+            _items.Add(new InventoryItemData(id) {Value = value});
+        }
+
 
         public void DropInInventory()
         {

@@ -1823,6 +1823,12 @@ MonoBehaviour:
         Value: 0
     Hp:
       _value: 10
+    Perks:
+      _used:
+        _value: 
+      _unlocked: []
+    Levels:
+      _progress: []
   _defaultCheckPoint: level2-checkpoint1
 --- !u!4 &669647093
 Transform:

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using PixelCrew.Components.Collectables;
 using PixelCrew.Model.Definitions;
 using PixelCrew.Model.Definitions.Repository;
 using PixelCrew.Model.Definitions.Repository.Items;
@@ -32,10 +33,59 @@ namespace PixelCrew.Model.Data
             else
             {
                 AddNonStack(id, value);
+                
             }
             
             OnChanged?.Invoke(id,Count(id));
         }
+        public void AddToBig(string id, int value)
+        {
+            if (value <= 0) return;
+
+            var itemDef = DefsFacade.I.Items.Get(id);
+            if(itemDef.IsVoid) return;
+
+
+            if (itemDef.HasTag(ItemTag.Stackable))
+            {
+                AddToStackBig(id,value);
+            }
+            else
+            {
+                AddNonStackBig(id, value);
+            }
+            
+            OnChanged?.Invoke(id,Count(id));
+        }
+
+        
+
+        private void AddToStackBig(string id, int value)
+        {
+            var isFull = _inventory.Count >= DefsFacade.I.Player.InventorySizeBig;
+            var item = GetItem(id);
+            if (item == null)
+            {
+                if(isFull) return;
+                    
+                item = new InventoryItemData(id);
+                _inventory.Add(item);
+            }
+            item.Value += value;
+        }
+        private void AddNonStackBig(string id, int value)
+        {
+            var itemLasts = DefsFacade.I.Player.InventorySizeBig - _inventory.Count;
+            value = Mathf.Min(itemLasts, value);
+            
+            for (int i = 0; i < value; i++)
+            {
+                var item = new InventoryItemData(id) {Value = 1};
+                _inventory.Add(item);
+            }
+        }
+
+        
 
 
         public InventoryItemData[] GetAll(params ItemTag[] tags)
@@ -55,7 +105,7 @@ namespace PixelCrew.Model.Data
 
         private void AddToStack(string id, int value)
         {
-            var isFull = _inventory.Count >= DefsFacade.I.Player.InventorySize;
+            var isFull = _inventory.Count >= DefsFacade.I.Player.InventorySizeQuick;
             var item = GetItem(id);
             if (item == null)
             {
@@ -69,7 +119,7 @@ namespace PixelCrew.Model.Data
         }
         private void AddNonStack(string id, int value)
         {
-            var itemLasts = DefsFacade.I.Player.InventorySize - _inventory.Count;
+            var itemLasts = DefsFacade.I.Player.InventorySizeQuick - _inventory.Count;
             value = Mathf.Min(itemLasts, value);
             
             for (int i = 0; i < value; i++)

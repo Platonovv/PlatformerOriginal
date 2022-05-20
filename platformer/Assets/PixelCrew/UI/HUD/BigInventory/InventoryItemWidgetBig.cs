@@ -10,7 +10,7 @@ using UnityEngine.UI;
 
 namespace PixelCrew.UI.HUD.QuickInventory
 {
-    public class InventoryItemWidget : MonoBehaviour, IItemRenderer<InventoryItemData>
+    public class InventoryItemWidgetBig : MonoBehaviour, IItemRenderer<InventoryItemData>
     {
         [SerializeField] private Image _icon;
         [SerializeField] private GameObject _selection;
@@ -24,33 +24,22 @@ namespace PixelCrew.UI.HUD.QuickInventory
         private void Start()
         {
             var session = FindObjectOfType<GameSession>();
-            var index = session.QuickInventory.SelectedIndex;
-            _trash.Retain(index.SubscribeAndInvoke(OnIndexChanged));
+            var indexis = session.BigInventory.SelectedIndex;
+            _trash.Retain(indexis.SubscribeAndInvoke(OnIndexChanged));
         }
 
         private void OnIndexChanged(int newValue, int _)
         {
             _selection.SetActive(_index == newValue);
         }
-
+        
 
         public void SetData(InventoryItemData item, int index)
         {
             _index = index;
-            if (item != null)
-            {
-                _icon.gameObject.SetActive(true);
-                _value.gameObject.SetActive(true);
-                var def = DefsFacade.I.Items.Get(item.Id);
-                _icon.sprite = def.Icon;
-                _value.text = def.HasTag(ItemTag.Stackable) ? item.Value.ToString() : string.Empty;
-            }
-            else
-            {
-                _icon.gameObject.SetActive(false);
-                _value.gameObject.SetActive(false); 
-            }
-
+            var def = DefsFacade.I.Items.Get(item.Id);
+            _icon.sprite = def.Icon;
+            _value.text = def.HasTag(ItemTag.Stackable) ? item.Value.ToString() : string.Empty;
         }
 
         private void OnDestroy()

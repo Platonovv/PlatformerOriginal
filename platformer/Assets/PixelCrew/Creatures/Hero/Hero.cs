@@ -200,6 +200,10 @@ namespace PixelCrew.Creatures.Hero
       {
          _session.Data.Inventory.Add(id,value);
       }
+      public void AddInInventoryBig(string id , int value)
+      {
+         _session.Data.Inventory.AddToBig(id,value);
+      }
       
       public override void TakeDamage()
       {
@@ -391,6 +395,11 @@ namespace PixelCrew.Creatures.Hero
          return _session.QuickInventory.SelectedDef.HasTag(tag);
 
       }
+      private bool IsSelectedItems(ItemTag tag)
+      {
+         return _session.BigInventory.SelectedDef.HasTag(tag);
+
+      }
       private void PerformThrowing()
       {
          if (!_throwCooldown.IsReady || !CanThrow) return;
@@ -416,6 +425,16 @@ namespace PixelCrew.Creatures.Hero
       public void NextItem()
       {
          _session.QuickInventory.SetNextItem();
+      }
+      public void NextItems()
+      {
+         _session.BigInventory.SetNextItem();
+      }
+      
+      public void AddQuickInventory()
+      {
+         var bigInventorySelectedItem = _session.BigInventory.GetSelectedItem();
+         _session.QuickInventory.AddQuickInventoryItem(bigInventorySelectedItem);
       }
    }
 }

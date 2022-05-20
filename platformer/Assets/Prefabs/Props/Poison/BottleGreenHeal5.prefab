@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6460140265745423159}
   - component: {fileID: 8579666348944920218}
   - component: {fileID: 4341398926388393469}
+  - component: {fileID: 786024675}
   m_Layer: 0
   m_Name: BottleGreenHeal5
   m_TagString: Untagged
@@ -155,6 +156,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 786024675}
+        m_MethodName: AddToBig
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6460140265745423156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 6460140265745423158}
+  _state: {fileID: 0}
 --- !u!114 &6460140265745423159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,6 +254,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5394c05cfcde4c91b2085f9761167e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: BottleGreenHeal5
+  _count: 1
+--- !u!114 &786024675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6460140265745423158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9c7aa1fdc648a09de2855d20ccb14e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _id: BottleGreenHeal5

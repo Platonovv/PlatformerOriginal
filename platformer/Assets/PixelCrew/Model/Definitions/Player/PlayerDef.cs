@@ -6,11 +6,14 @@ namespace PixelCrew.Model.Definitions.Player
     [CreateAssetMenu(menuName = "Defs/PlayerDef", fileName = "PlayerDef")]
     public class PlayerDef : ScriptableObject
     {
-        [SerializeField] private int _InventorySize;
+        [SerializeField] private int inventorySizeQuick;
+        [SerializeField] private int inventorySizeBig;
         [SerializeField] private int _maxHealth;
         [SerializeField] private StatDef[] _stats;
 
-        public int InventorySize => _InventorySize;
+        public int InventorySizeQuick => inventorySizeQuick;
+        public int InventorySizeBig => inventorySizeBig;
+
 
         public StatDef[] Stats => _stats;
 

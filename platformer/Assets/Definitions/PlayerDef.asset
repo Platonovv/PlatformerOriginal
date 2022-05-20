@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f8daa81b3e4f198dffc84fdf7bbc5c, type: 3}
   m_Name: PlayerDef
   m_EditorClassIdentifier: 
-  _InventorySize: 10
+  inventorySizeQuick: 3
+  inventorySizeBig: 3
   _maxHealth: 15
   _stats:
   - _name: Health

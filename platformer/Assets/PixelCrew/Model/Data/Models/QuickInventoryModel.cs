@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using PixelCrew.Model.Data.Properties;
 using PixelCrew.Model.Definitions;
 using PixelCrew.Model.Definitions.Repository.Items;
@@ -11,9 +12,10 @@ namespace PixelCrew.Model.Data.Models
     {
         private readonly PlayerData _data;
 
-        public InventoryItemData[] Inventory { get; private set; }
+        public InventoryItemData[] QuickInventory { get; private set; }
 
         public readonly IntProperty SelectedIndex = new IntProperty();
+        
 
         public event Action OnChanged;
 
@@ -21,8 +23,8 @@ namespace PixelCrew.Model.Data.Models
         {
             get
             {
-                if (Inventory.Length > 0 && Inventory.Length > SelectedIndex.Value)
-                    return Inventory[SelectedIndex.Value];
+                if (QuickInventory.Length > 0 && QuickInventory.Length > SelectedIndex.Value)
+                    return QuickInventory[SelectedIndex.Value];
                 
                 return null;
             }
@@ -34,8 +36,31 @@ namespace PixelCrew.Model.Data.Models
         {
             _data = data;
 
-            Inventory = _data.Inventory.GetAll(ItemTag.Usable);
+            QuickInventory = new InventoryItemData[3];
             _data.Inventory.OnChanged += OnChangedInventory;
+        }
+        private void OnChangedInventory(string id, int value)
+        {
+            var allInventory = _data.Inventory.GetAll(ItemTag.Usable);
+            for (var i = 0; i < QuickInventory.Length; i++)
+            {
+                if (QuickInventory[i] == null) continue;
+                var isItemExist = false;
+                foreach (var itemData in allInventory)
+                {
+                    if (itemData.Id == QuickInventory[i].Id)
+                    {
+                        isItemExist = true;
+                    }
+                }
+
+                if (isItemExist == false)
+                {
+                    QuickInventory[i] = null;
+                }
+            }
+
+            OnChanged?.Invoke();
         }
 
         public IDisposable Subscribe(Action call)
@@ -44,17 +69,19 @@ namespace PixelCrew.Model.Data.Models
             return new ActionDisposables(() => OnChanged -= call);
         }
 
-        private void OnChangedInventory(string id, int value)
-        {
-            Inventory = _data.Inventory.GetAll(ItemTag.Usable);
-            SelectedIndex.Value = Mathf.Clamp(SelectedIndex.Value, 0, Inventory.Length - 1);
-            OnChanged?.Invoke();
-            
-        }
+        
 
+        public void AddQuickInventoryItem(InventoryItemData item)
+        {
+            if(item == null) return;
+            if (!DefsFacade.I.Items.Get(item.Id).HasTag(ItemTag.Usable))  return;
+            QuickInventory[SelectedIndex.Value] = item;
+            OnChanged?.Invoke();
+        }
+        
         public void SetNextItem()
         {
-            SelectedIndex.Value = (int) Mathf.Repeat(SelectedIndex.Value + 1, Inventory.Length);
+            SelectedIndex.Value = (int) Mathf.Repeat(SelectedIndex.Value + 1, QuickInventory.Length);
         }
 
         public void Dispose()
