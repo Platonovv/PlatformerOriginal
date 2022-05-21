@@ -45,4 +45,8 @@ MonoBehaviour:
   - Key: some-icon
     Value: "some-icon/resource/1\r"
   - Key: Dash
-    Value: Dash
+    Value: "Dash\r"
+  - Key: shield-info
+    Value: "This is Magic Shield!\r"
+  - Key: Critical Damage
+    Value: Critical Damage

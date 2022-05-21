@@ -20,11 +20,8 @@ namespace PixelCrew.UI.HUD
         private void Start()
         {
             _session = FindObjectOfType<GameSession>();
-             _session.Data.Hp.OnChanged += OnHealthChanged;
-            
+            _trash.Retain(_session.Data.Hp.SubscribeAndInvoke(OnHealthChanged));
             _trash.Retain(_session.PerksModel.Subscribe(OnPerkChanged));
-            
-            OnHealthChanged(_session.Data.Hp.Value, 0);
             
             OnPerkChanged();
         }
@@ -56,7 +53,6 @@ namespace PixelCrew.UI.HUD
         private void OnDestroy()
         {
             _trash.Dispose();
-           _session.Data.Hp.OnChanged -= OnHealthChanged;
         }
 
         public void OnDebug()

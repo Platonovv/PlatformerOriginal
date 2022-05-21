@@ -9,9 +9,12 @@ namespace PixelCrew.UI.HUD.Dialogs.Editor
     public class ShowDialogComponentEditor : UnityEditor.Editor
     {
         private SerializedProperty _modeProperty;
+        private SerializedProperty _onCompeleteProperty;
+
         private void OnEnable()
         {
             _modeProperty = serializedObject.FindProperty("_mode");
+            _onCompeleteProperty = serializedObject.FindProperty("_onComplete");
         }
 
         public override void OnInspectorGUI()
@@ -31,7 +34,7 @@ namespace PixelCrew.UI.HUD.Dialogs.Editor
                 }
             }
             
-            
+            EditorGUILayout.PropertyField(_onCompeleteProperty);
             serializedObject.ApplyModifiedProperties();
         }
     }

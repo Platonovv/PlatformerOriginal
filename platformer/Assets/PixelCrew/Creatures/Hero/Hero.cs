@@ -15,7 +15,7 @@ using TMPro;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UIElements;
-using Random = System.Random;
+using Random = UnityEngine.Random;
 
 namespace PixelCrew.Creatures.Hero
 {
@@ -47,6 +47,7 @@ namespace PixelCrew.Creatures.Hero
       [SerializeField] private float _superThrowDelay;
       [SerializeField] private ProbabilityDropComponent _hitDrop;
       [SerializeField] private SpawnComponent _throwSpawner;
+      [SerializeField] private ShieldComponent _shield;
 
 
 
@@ -186,12 +187,11 @@ namespace PixelCrew.Creatures.Hero
       {
           if (!IsGrounded && _allowDoubleJump && _session.PerksModel.IsDoubleJumpSupported && !_isOnWall) 
           {
-            _allowDoubleJump = false;
+             _session.PerksModel.Cooldown.Reset();
+             _allowDoubleJump = false;
             DoJumpVfx();
-            return _jumpSpeed;
-         }
-
-         return base.CalculateJumpVelocity(yVelocity);
+            return _jumpSpeed; }
+          return base.CalculateJumpVelocity(yVelocity);
 
       }
 
@@ -277,6 +277,7 @@ namespace PixelCrew.Creatures.Hero
             var possibleCount = SelectedItemId == SwordId ? throwableCount - 1 : throwableCount;
             
             var numThrows = Mathf.Min(_superThrowParticles, possibleCount);
+            _session.PerksModel.Cooldown.Reset();
             StartCoroutine(DoSuperThrow(numThrows));
          }
          else
@@ -304,14 +305,32 @@ namespace PixelCrew.Creatures.Hero
          var throwableId = _session.QuickInventory.SelectedItem.Id;
          var throwableDef = DefsFacade.I.Throwable.Get(throwableId);
          _throwSpawner.SetPrefab(throwableDef.Projectile);
-         _throwSpawner.Spawn();
+         var instance = _throwSpawner.SpawnInstance();
+         ApplyRangeDamageStat(instance);
    
          _session.Data.Inventory.Remove(throwableId, 1);
       }
-      
-      
-      
-     /* public void UsePotionR()
+
+      private void ApplyRangeDamageStat(GameObject projectile)
+      {
+         var hpChange = projectile.GetComponent<ChangeHealthComponent>();
+         var damageValue =(int) _session.StatsModel.GetValue(StatId.RangeDamage);
+         damageValue = ModifyDamageByCrit(damageValue);
+         hpChange.SetDelta(-damageValue);
+      }
+
+      private int ModifyDamageByCrit(int damage)
+      {
+         var critChange = _session.StatsModel.GetValue(StatId.CriticalDamage);
+         if (Random.value * 100 <= critChange)
+         {
+             return damage * 2;
+         }
+         return damage;
+      }
+
+
+      /* public void UsePotionR()
       {
          if (SelectedItemId == BottleId)
          {
@@ -370,7 +389,7 @@ namespace PixelCrew.Creatures.Hero
                Debug.Log($"Health changed, current Health : {_session.Data.Hp.Value}");
                break;
             case Effect.SpeedUp:
-               _speedUpCooldown.Value= _speedUpCooldown.TimeLasts + potion.Time;
+               _speedUpCooldown.Value= _speedUpCooldown.RemainingTime + potion.Time;
                _additionalSpeed = Mathf.Max(potion.Value, _additionalSpeed);
                _speedUpCooldown.Reset();
                Debug.Log($"Speed changed, current Speed : {_speed + _additionalSpeed} ");
@@ -416,10 +435,11 @@ namespace PixelCrew.Creatures.Hero
          {
             var newPosition = Rigidbody.position + new Vector2(_Dash * transform.localScale.x, 0);
             Rigidbody.MovePosition(newPosition);
+            _session.PerksModel.Cooldown.Reset();
+
             
             _DashCooldown.Reset();
          }
-         
       }
 
       public void NextItem()
@@ -435,6 +455,15 @@ namespace PixelCrew.Creatures.Hero
       {
          var bigInventorySelectedItem = _session.BigInventory.GetSelectedItem();
          _session.QuickInventory.AddQuickInventoryItem(bigInventorySelectedItem);
+      }
+
+      public void UsePerk()
+      {
+         if (_session.PerksModel.IsShieldSupported)
+         {
+            _shield.Use();
+            _session.PerksModel.Cooldown.Reset();
+         }
       }
    }
 }

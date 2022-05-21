@@ -12,6 +12,10 @@ namespace PixelCrew.Components.Health
         private GameSession _session;
 
 
+        public void SetDelta(int delta)
+        {
+            _healDelta = delta;
+        }
         private void Start()
         {
             _session = FindObjectOfType<GameSession>();
@@ -44,7 +48,7 @@ namespace PixelCrew.Components.Health
 
         private void OnDestroy()
         {
-            _session.StatsModel.OnUpgraded -= OnHeroHealDeltaUpgrade;
+           _session.StatsModel.OnUpgraded -= OnHeroHealDeltaUpgrade;
         }
     }
 }

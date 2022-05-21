@@ -78,25 +78,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "MousePosition",
-                    "type": "Value",
-                    "id": "8b09f56c-f313-426b-b6c3-b3c49a7da887",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "MouseButton",
+                    "name": "ButtonAddInQuickInventory",
                     "type": "Button",
-                    "id": "cd996da2-99ca-49d5-b0e8-2dfac959b632",
+                    "id": "fc310399-f989-4a7b-9f3f-16343726392b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "ButtonAddInQuickInventory",
+                    "name": "UsePerk",
                     "type": "Button",
-                    "id": "fc310399-f989-4a7b-9f3f-16343726392b",
+                    "id": "83acccbc-c34a-457b-bd67-97360cbcbdcd",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -248,34 +240,23 @@
                 },
                 {
                     "name": "",
-                    "id": "2a00f2be-219a-4d36-a04b-6edb6dea1106",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MousePosition",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e323946d-0a20-415d-9a73-b45d004c3943",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MouseButton",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "8885a365-678e-49b3-a145-3350e2a10271",
                     "path": "<Keyboard>/o",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "ButtonAddInQuickInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9e226296-5306-4c82-8f24-fda8975fc122",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UsePerk",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

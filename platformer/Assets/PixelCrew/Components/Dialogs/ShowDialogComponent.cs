@@ -3,6 +3,7 @@ using PixelCrew.Model.Data;
 using PixelCrew.Model.Definitions;
 using PixelCrew.UI.HUD.Dialogs;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace PixelCrew.Components.Dialogs
 {
@@ -11,13 +12,14 @@ namespace PixelCrew.Components.Dialogs
         [SerializeField] private Mode _mode;
         [SerializeField] private DialogData _bound;
         [SerializeField] private DialogDef _external;
+        [SerializeField] private UnityEvent _onComplete;
 
 
         private DialogBoxController _dialogBox;
         public void Show()
         {
             _dialogBox = FiindDialogController();
-            _dialogBox.ShowDialog(Data);
+            _dialogBox.ShowDialog(Data, _onComplete);
         }
 
         private DialogBoxController FiindDialogController()

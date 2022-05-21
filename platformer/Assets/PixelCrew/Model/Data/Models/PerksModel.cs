@@ -2,6 +2,7 @@
 using System.Net.Mime;
 using PixelCrew.Model.Data.Properties;
 using PixelCrew.Model.Definitions;
+using PixelCrew.Utils;
 using PixelCrew.Utils.Disposables;
 
 namespace PixelCrew.Model.Data.Models
@@ -11,8 +12,11 @@ namespace PixelCrew.Model.Data.Models
         private readonly PlayerData _data;
         public readonly StringProperty InterfaceSelection = new StringProperty();
 
+        public readonly Cooldown Cooldown = new Cooldown();
+
         private readonly CompositeDisposables _trash = new CompositeDisposables();
         
+
         public event Action OnChanged;
         public PerksModel(PlayerData data)
         {
@@ -30,9 +34,10 @@ namespace PixelCrew.Model.Data.Models
             return new ActionDisposables((() => OnChanged -= call));
         }
         public string Used => _data.Perks.Used.Value;
-        public bool IsSuperThrowSupported => _data.Perks.Used.Value == ("super-throw");
-        public bool IsDoubleJumpSupported => _data.Perks.Used.Value == ("double-jump");
-        public bool IsDashSupported => _data.Perks.Used.Value == ("dash");
+        public bool IsSuperThrowSupported => _data.Perks.Used.Value == "super-throw" && Cooldown.IsReady;
+        public bool IsDoubleJumpSupported => _data.Perks.Used.Value == "double-jump" && Cooldown.IsReady;
+        public bool IsDashSupported => _data.Perks.Used.Value == "dash" && Cooldown.IsReady;
+        public bool IsShieldSupported => _data.Perks.Used.Value == "shield" && Cooldown.IsReady;
 
 
         public void Unlock(string id)
@@ -50,8 +55,10 @@ namespace PixelCrew.Model.Data.Models
             
         }
 
-        public void UsePerk(string selected)
+        public void SelectPerk(string selected)
         {
+            var perk = DefsFacade.I.Perks.Get(selected);
+            Cooldown.Value = perk.Cooldown;
             _data.Perks.Used.Value = selected;
         }
         

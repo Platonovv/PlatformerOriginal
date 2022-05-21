@@ -13,15 +13,19 @@ namespace PixelCrew.Components.Health
         [SerializeField] public UnityEvent _onDie;
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] public HealthChangeEvent _onChange;
-
-
+        [SerializeField] private bool _immune;
 
         public float Health => _health;
+        public bool Immune 
+        { 
+            get => _immune;
+            set => _immune = value; 
+        }
 
-       
 
         public void ChangeHealth(int deltaHealth)
         {
+            if(deltaHealth < 0 && Immune) return;
             if (_health <= 0) return;
             
             _health += deltaHealth;
