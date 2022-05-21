@@ -63,5 +63,10 @@ namespace PixelCrew.UI.HUD
         {
             WindowUtils.CreateWindow("UI/PlayerStatsWindow");
         }
+        
+        public void OnBigInventory()
+        {
+            WindowUtils.CreateWindow("UI/BigInventory");
+        }
     }
 }

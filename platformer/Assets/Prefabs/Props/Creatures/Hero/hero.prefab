@@ -426,33 +426,11 @@ MonoBehaviour:
     m_ActionId: 67ce07d9-a107-4056-a343-aef39a3dc982
     m_ActionName: Hero/NextItems[/Keyboard/i]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 444909684101719975}
-        m_MethodName: OnMousePos
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 8b09f56c-f313-426b-b6c3-b3c49a7da887
     m_ActionName: Hero/MousePosition[/Mouse/position]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 444909684101719975}
-        m_MethodName: OnMouseButton
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: cd996da2-99ca-49d5-b0e8-2dfac959b632
     m_ActionName: Hero/MouseButton[/Mouse/leftButton]
   - m_PersistentCalls:
