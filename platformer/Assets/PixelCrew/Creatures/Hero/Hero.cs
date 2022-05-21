@@ -412,7 +412,7 @@ namespace PixelCrew.Creatures.Hero
 
       public void Dash()
       {
-         if (_DashCooldown.IsReady)
+         if (_DashCooldown.IsReady && _session.PerksModel.IsDashSupported)
          {
             var newPosition = Rigidbody.position + new Vector2(_Dash * transform.localScale.x, 0);
             Rigidbody.MovePosition(newPosition);

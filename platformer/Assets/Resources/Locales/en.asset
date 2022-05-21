@@ -43,4 +43,6 @@ MonoBehaviour:
   - Key: level-up
     Value: "Upgrade\r"
   - Key: some-icon
-    Value: some-icon/resource/1
+    Value: "some-icon/resource/1\r"
+  - Key: Dash
+    Value: Dash

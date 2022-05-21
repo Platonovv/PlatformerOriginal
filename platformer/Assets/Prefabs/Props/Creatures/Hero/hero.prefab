@@ -236,7 +236,7 @@ MonoBehaviour:
   _speed: 3
   _jumpSpeed: 12
   _damageVelocity: 20
-  _Dash: 5
+  _Dash: 2
   _groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -255,7 +255,7 @@ MonoBehaviour:
   _throwCooldown:
     _value: 1
   _DashCooldown:
-    _value: 2
+    _value: 1
   _armed: {fileID: 9100000, guid: be047b7e9a9c7244dacc5b07795f2a21, type: 2}
   _disarmed: {fileID: 9100000, guid: ddd98b1fb1c498f4dae4cbc98e35ee7a, type: 2}
   _superThrowCooldown:
