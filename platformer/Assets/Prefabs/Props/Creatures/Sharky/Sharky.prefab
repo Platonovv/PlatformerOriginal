@@ -258,7 +258,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -426,6 +426,7 @@ MonoBehaviour:
   _onChange:
     m_PersistentCalls:
       m_Calls: []
+  _immune: 0
 --- !u!114 &3968309735634984521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,6 +464,7 @@ MonoBehaviour:
   _speed: 1
   _jumpSpeed: 20
   _damageVelocity: 5
+  _Dash: 0
   _groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -486,6 +488,7 @@ MonoBehaviour:
   _alarmDelay: 0.5
   _attackCooldown: 1
   _missHeroCooldown: 0.5
+  _horizontalTreshold: 0.2
 --- !u!114 &1837546647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,7 +533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aadf51e6ad6a4b64a6dd33152d8e4e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 0}
   _sounds:
   - _id: Melee
     _clip: {fileID: 8300000, guid: a69d322bd3e28bb4ca6069766bad1bb6, type: 3}

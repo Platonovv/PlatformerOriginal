@@ -142,7 +142,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 1963948762719320180}
+  _state: {fileID: 0}
 --- !u!114 &1963948762719320174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,6 +320,7 @@ MonoBehaviour:
   _onChange:
     m_PersistentCalls:
       m_Calls: []
+  _immune: 0
 --- !u!50 &1963948762719320175
 Rigidbody2D:
   serializedVersion: 4
@@ -450,7 +452,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aadf51e6ad6a4b64a6dd33152d8e4e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 0}
   _sounds:
   - _id: Die
     _clip: {fileID: 8300000, guid: 5da039ae7e4f45448a0b53d82b141ef3, type: 3}

@@ -92,7 +92,7 @@ PrefabInstance:
     - target: {fileID: 444909684101719976, guid: 4c40f8967be94d746b28f68a9daa1ae6,
         type: 3}
       propertyPath: m_Name
-      value: Crabby (1)
+      value: Crabby
       objectReference: {fileID: 0}
     - target: {fileID: 444909684101719976, guid: 4c40f8967be94d746b28f68a9daa1ae6,
         type: 3}
