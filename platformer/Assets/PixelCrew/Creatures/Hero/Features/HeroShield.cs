@@ -1,11 +1,10 @@
-﻿using System;
-using PixelCrew.Components.Health;
+﻿using PixelCrew.Components.Health;
 using PixelCrew.Utils;
 using UnityEngine;
 
-namespace PixelCrew.Components
+namespace PixelCrew.Creatures.Hero.Features
 {
-    public class ShieldComponent : MonoBehaviour
+    public class HeroShield : MonoBehaviour
     {
         [SerializeField] private Cooldown _cooldown;
         [SerializeField] private HealthComponent _health;
@@ -13,7 +12,7 @@ namespace PixelCrew.Components
 
         public void Use()
         {
-            _health.Immune = true;
+            _health.Immune.Retain(this); 
             _cooldown.Reset();
             gameObject.SetActive(true);
         }
@@ -26,7 +25,7 @@ namespace PixelCrew.Components
 
         private void OnDisable()
         {
-            _health.Immune = false;
+            _health.Immune.Release(this);
         }
     }
 }

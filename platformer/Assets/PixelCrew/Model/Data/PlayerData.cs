@@ -14,6 +14,7 @@ namespace PixelCrew.Model.Data
         public IntProperty Hp = new IntProperty();
         public PerksData Perks = new PerksData();
         public LevelData Levels = new LevelData();
+        public FloatProperty Fuel = new FloatProperty();
 
 
 

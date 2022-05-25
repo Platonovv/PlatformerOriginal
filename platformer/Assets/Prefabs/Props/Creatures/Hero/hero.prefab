@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 3968309735634984521}
   - component: {fileID: 671319670}
   - component: {fileID: 280830266720503962}
+  - component: {fileID: -3292399690150477518}
   m_Layer: 17
   m_Name: hero
   m_TagString: Player
@@ -267,6 +268,7 @@ MonoBehaviour:
   _hitDrop: {fileID: 3008030033105757258}
   _throwSpawner: {fileID: 4486315113554584891}
   _shield: {fileID: 6153013684231739603}
+  _flashLight: {fileID: 5888701689656590281}
 --- !u!114 &444909684101719973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,6 +460,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 83acccbc-c34a-457b-bd67-97360cbcbdcd
     m_ActionName: Hero/UsePerk[/Keyboard/t]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 444909684101719975}
+        m_MethodName: OnToggleFlashLight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3a7c9f8b-fec3-4403-955f-43ad416c92f4
+    m_ActionName: Hero/UseFlashlight[/Keyboard/h]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -635,7 +652,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _immune: 0
 --- !u!114 &3968309735634984521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -692,6 +708,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 082f37dcdb8c43942bee737c62c68f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3292399690150477518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444909684101719976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7790a90383514158a4ba5a4fc173f956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _immuneTime: 1
 --- !u!1 &444909684218330663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1376,6 +1405,7 @@ GameObject:
   - component: {fileID: 8473790306864570382}
   - component: {fileID: 8473790306864570381}
   - component: {fileID: 8473790306864570380}
+  - component: {fileID: 5888701689656590281}
   m_Layer: 0
   m_Name: Candle
   m_TagString: Untagged
@@ -1475,6 +1505,20 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
+--- !u!114 &5888701689656590281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8473790306864570387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff5cc977269b4e0698bd98a67bafdd19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _consumePerSecond: 1
+  _light: {fileID: 8473790306522266906}
 --- !u!1 &9079543067776046991
 GameObject:
   m_ObjectHideFlags: 0

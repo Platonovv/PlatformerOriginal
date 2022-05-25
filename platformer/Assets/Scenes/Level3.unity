@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -16997,6 +16997,7 @@ GameObject:
   - component: {fileID: 1146275886}
   - component: {fileID: 1146275885}
   - component: {fileID: 1146275887}
+  - component: {fileID: 1146275888}
   m_Layer: 0
   m_Name: FollowCamera
   m_TagString: Untagged
@@ -17095,6 +17096,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86eb4621766b43e7a4672ee49a53a9cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1146275888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146275882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9861ad48db5e44079a6e6c0baa59c76c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationTime: 0.3
+  _intensity: 3
 --- !u!1 &1151374995 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 444909684101719976, guid: 4c40f8967be94d746b28f68a9daa1ae6,
@@ -18026,6 +18041,7 @@ GameObject:
   - component: {fileID: 1209350967}
   - component: {fileID: 1209350969}
   - component: {fileID: 1209350968}
+  - component: {fileID: 1209350970}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -18102,6 +18118,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1209350970
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209350966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 1
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1001 &1214500847
 PrefabInstance:
   m_ObjectHideFlags: 0

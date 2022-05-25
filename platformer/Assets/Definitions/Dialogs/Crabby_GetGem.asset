@@ -14,5 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _sentences:
-    - Get me a Green Gem..
-    - And I'll give you the key to open the door !
+    - _valued: v
+      _icon: {fileID: 0}
+      _side: 0
+    - _valued: a
+      _icon: {fileID: 0}
+      _side: 0
+    _type: 0

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using PixelCrew.Model.Data;
+using PixelCrew.Model.Definitions.Localization;
 using PixelCrew.Utils;
 using UnityEngine;
 using UnityEngine.Events;
@@ -55,8 +56,10 @@ namespace PixelCrew.UI.HUD.Dialogs
             CurrentContent.Text.text = string.Empty;
             var sentences = CurrentSentence;
             CurrentContent.TrySetIcon(sentences.Icon);
+
+            var localizedSentence = sentences.Valued.Localize();
             
-            foreach (var letter in sentences.Valued)
+            foreach (var letter in localizedSentence)
             {
                 CurrentContent.Text.text += letter;
                 _sfxSource.PlayOneShot(_typing);
@@ -78,7 +81,8 @@ namespace PixelCrew.UI.HUD.Dialogs
             if(_typingRoutine == null) return;
 
             StopTypeAnimation();
-            CurrentContent.Text.text = _data.Sentences[_currentSentence].Valued;
+            var sentence= _data.Sentences[_currentSentence].Valued;
+            CurrentContent.Text.text = sentence.Localize();
         }
         
 

@@ -4,7 +4,7 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -1338783731505039363
-    second: Platforms (32x32)_0
+    second: Platforms (32x32)_2
   - first:
       213: 5723994069117334142
     second: Platforms (32x32)_1
@@ -93,16 +93,16 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Platforms (32x32)_0
+      name: Platforms (32x32)_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 87
-        width: 128
-        height: 8
+        y: 86
+        width: 96
+        height: 9
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 32, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -117,13 +117,13 @@ TextureImporter:
       name: Platforms (32x32)_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 52
-        width: 128
+        x: 128
+        y: 85
+        width: 32
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 32, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0

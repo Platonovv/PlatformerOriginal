@@ -4,6 +4,7 @@ using PixelCrew.Components;
 using PixelCrew.Components.ColliderBased;
 using PixelCrew.Components.GoBased;
 using PixelCrew.Components.Health;
+using PixelCrew.Creatures.Hero.Features;
 using PixelCrew.Effects.CameraRelated;
 using PixelCrew.Model;
 using PixelCrew.Model.Data;
@@ -48,7 +49,8 @@ namespace PixelCrew.Creatures.Hero
       [SerializeField] private float _superThrowDelay;
       [SerializeField] private ProbabilityDropComponent _hitDrop;
       [SerializeField] private SpawnComponent _throwSpawner;
-      [SerializeField] private ShieldComponent _shield;
+      [SerializeField] private HeroShield _shield;
+      [SerializeField] private HeroFlashLight _flashLight;
 
 
 
@@ -468,6 +470,13 @@ namespace PixelCrew.Creatures.Hero
             _shield.Use();
             _session.PerksModel.Cooldown.Reset();
          }
+      }
+
+
+      public void ToggleFlashlight()
+      {
+         var isActive = _flashLight.gameObject.activeSelf;
+         _flashLight.gameObject.SetActive(!isActive);
       }
    }
 }

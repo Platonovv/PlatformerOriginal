@@ -1,6 +1,7 @@
 ﻿using System;
 using PixelCrew.Creatures.Mobs;
 using PixelCrew.UI.HUD;
+using PixelCrew.Utils;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,23 +10,20 @@ namespace PixelCrew.Components.Health
     public class HealthComponent : MonoBehaviour
     {
         [SerializeField] private int _health;
-        [SerializeField] private UnityEvent _onDamage;
+        [SerializeField] public UnityEvent _onDamage;
         [SerializeField] public UnityEvent _onDie;
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] public HealthChangeEvent _onChange;
-        [SerializeField] private bool _immune;
+        private Lock _immune = new Lock();
 
-        public float Health => _health;
-        public bool Immune 
-        { 
-            get => _immune;
-            set => _immune = value; 
-        }
+        public int Health => _health;
+        public Lock Immune => _immune;
+        
 
 
         public void ChangeHealth(int deltaHealth)
         {
-            if(deltaHealth < 0 && Immune) return;
+            if(deltaHealth < 0 && Immune.IsLocked) return;
             if (_health <= 0) return;
             
             _health += deltaHealth;
