@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1653231435791186299}
   - component: {fileID: 1653231435791186276}
   - component: {fileID: 1653231435791186277}
-  - component: {fileID: 1653231435791186298}
+  - component: {fileID: 1020337671190416287}
   m_Layer: 0
   m_Name: JumpPosition
   m_TagString: Untagged
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653231435791186296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: -0.079, z: 0}
+  m_LocalPosition: {x: -0.02, y: 0.177, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -69,8 +69,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 891045687
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 89a8ab73eafa08c4d935e4bf97d0d1c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,21 +97,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _frameRate: 10
   _clips:
-  - _name: 
+  - _name: jump
     _sprites:
-    - {fileID: 21300000, guid: e6a7b652444c4a14fb98a5867e06f3ea, type: 3}
-    - {fileID: 21300000, guid: f9ad1a6376a488a459b479662f2c3732, type: 3}
-    - {fileID: 21300000, guid: f24d766a71f9ebf44a030f9de610fba3, type: 3}
-    - {fileID: 21300000, guid: ce18e5b38a4fed34a8c6ce041f1835d6, type: 3}
-    - {fileID: 21300000, guid: 410ff4ce056313242be0269704d231fc, type: 3}
-    - {fileID: 21300000, guid: 5130cf4e924196a49b933808922d23b2, type: 3}
+    - {fileID: 21300000, guid: 89a8ab73eafa08c4d935e4bf97d0d1c4, type: 3}
+    - {fileID: 21300000, guid: 45be75fc80c414b499d7358ed886f08d, type: 3}
+    - {fileID: 21300000, guid: 3169288eebcd6dc44baf439fdbcc42e7, type: 3}
+    - {fileID: 21300000, guid: adea20b7a2d44394eba41116e4408261, type: 3}
+    - {fileID: 21300000, guid: ecb82398bb03b8a47816f8bb3cb832bc, type: 3}
+    - {fileID: 21300000, guid: c8ffb740240becb4ca3d0f2af40b3164, type: 3}
     _loop: 0
     _allowNextClip: 0
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1653231435791186298}
-          m_MethodName: DestroyObject
+        - m_Target: {fileID: 1020337671190416287}
+          m_MethodName: Release
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1653231435791186298
+--- !u!114 &1020337671190416287
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,8 +130,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1653231435791186296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe99ac5b158f034a9966a3e65f7a77d, type: 3}
+  m_Script: {fileID: 11500000, guid: 41c14c6e51524e83954d4da140a848e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 1653231435791186296}
-  _state: {fileID: 0}
+  _onRestart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1653231435791186277}
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: jump
+          m_BoolArgument: 0
+        m_CallState: 2

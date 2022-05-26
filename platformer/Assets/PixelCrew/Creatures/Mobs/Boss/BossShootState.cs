@@ -11,10 +11,6 @@ namespace PixelCrew.Creatures.Mobs.Boss
         {
             var spawner = animator.GetComponent<CircularProjectileSpawner>();
             spawner.LaunchProjectiles();
-
-
-            //var spawners = animator.GetComponent<TentacleAI>();
-           // spawners.Laun
         }
     }
 }
