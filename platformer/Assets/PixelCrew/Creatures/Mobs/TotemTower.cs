@@ -42,8 +42,8 @@ namespace PixelCrew.Creatures.Mobs
                 enabled = false;
                 Destroy(gameObject, 1f);
             }
-            
-            var hasAnyTarget = _traps.Any(x => x._vision.IsTouchingLayer);
+
+            var hasAnyTarget = HasAnyTarget();
             if (hasAnyTarget)
             {
                 if (_cooldown.IsReady)
@@ -53,6 +53,17 @@ namespace PixelCrew.Creatures.Mobs
                     _currentTrap = (int)Mathf.Repeat(_currentTrap + 1, _traps.Count);
                 }
             }
+        }
+
+        private bool HasAnyTarget()
+        {
+            foreach (var shootingTrapAI in _traps)
+            {
+                if (shootingTrapAI._vision.IsTouchingLayer)
+                    return true;
+            }
+
+            return false;
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using PixelCrew.Model;
+﻿using PixelCrew.Model;
 using PixelCrew.Model.Data;
 using PixelCrew.Model.Definitions;
 using PixelCrew.Model.Definitions.Repository.Items;
@@ -8,7 +7,7 @@ using PixelCrew.Utils.Disposables;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace PixelCrew.UI.HUD.QuickInventory
+namespace PixelCrew.UI.HUD.BigInventory
 {
     public class InventoryItemWidgetBig : MonoBehaviour, IItemRenderer<InventoryItemData>
     {

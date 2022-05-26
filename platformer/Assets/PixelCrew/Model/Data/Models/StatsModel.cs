@@ -49,7 +49,7 @@ namespace PixelCrew.Model.Data.Models
 
         public float GetValue(StatId id, int level = -1)
         {
-            return GetLevelDef(id).Value;
+            return GetLevelDef(id, level).Value;
         }
 
         public StatLevelDef GetLevelDef(StatId id, int level = -1)
