@@ -8,15 +8,9 @@ namespace PixelCrew.Components.Collectables
     {
         private GameSession _session;
 
-        private void Start()
-        {
-            _session = FindObjectOfType<GameSession>();
-        }
-
-
         public void Refill()
         {
-            _session.Data.Fuel.Value = 100;
+            GameSession.Instance.Data.Fuel.Value = 100;
         }
 
     }

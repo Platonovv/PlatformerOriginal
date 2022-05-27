@@ -49,4 +49,12 @@ MonoBehaviour:
   - Key: shield-info
     Value: "This is Magic Shield!\r"
   - Key: Critical Damage
-    Value: Critical Damage
+    Value: "Critical Damage\r"
+  - Key: If you believe in gods, start praying to them
+    Value: "If you believe in gods, start praying to them\r"
+  - Key: Ok, I kill U
+    Value: "Ok, I kill U\r"
+  - Key: NOOOOOOOO!!!!!!!
+    Value: "NOOOOOOOO!!!!!!!\r"
+  - Key: O YeS!
+    Value: O YeS!

@@ -19,7 +19,7 @@ namespace PixelCrew.Components.Interactions
         
         public void Check()
         {
-            var session = FindObjectOfType<GameSession>();
+            var session = GameSession.Instance;
             var areAllRequirementMet = true;
             foreach (var item in _required)
             {

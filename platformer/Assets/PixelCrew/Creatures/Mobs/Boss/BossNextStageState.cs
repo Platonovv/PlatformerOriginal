@@ -5,6 +5,8 @@ namespace PixelCrew.Creatures.Mobs.Boss
 {
     public class BossNextStageState : StateMachineBehaviour
     {
+        [ColorUsage(true,true)]
+        [SerializeField] private Color _stageColor;
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             var spawner = animator.GetComponent<CircularProjectileSpawner>();
@@ -12,7 +14,7 @@ namespace PixelCrew.Creatures.Mobs.Boss
 
 
             var changeLight = animator.GetComponent<ChangeLightsComponent>();
-            changeLight.SetColor();
+            changeLight.SetColor(_stageColor);
         }
         
     }

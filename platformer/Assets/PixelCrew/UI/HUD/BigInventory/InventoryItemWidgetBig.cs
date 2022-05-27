@@ -22,7 +22,7 @@ namespace PixelCrew.UI.HUD.BigInventory
 
         private void Start()
         {
-            var session = FindObjectOfType<GameSession>();
+            var session = GameSession.Instance;
             var indexis = session.BigInventory.SelectedIndex;
             _trash.Retain(indexis.SubscribeAndInvoke(OnIndexChanged));
         }

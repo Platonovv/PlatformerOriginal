@@ -18,7 +18,7 @@ namespace PixelCrew.Components.Health
         }
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _session.StatsModel.OnUpgraded += OnHeroHealDeltaUpgrade;
             OnHeroHealDeltaUpgrade(StatId.RangeDamage);
         }

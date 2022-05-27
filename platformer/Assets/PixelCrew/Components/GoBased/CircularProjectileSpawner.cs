@@ -21,13 +21,13 @@ namespace PixelCrew.Components.GoBased
         private IEnumerator SpawnProjectiles()
         {
             var setting = _settings[Stage];
-            var sectorStep = 2 * Mathf.PI / setting.BurstCount;
+            var sectorStep = 2 * Mathf.PI / setting.Sides;
             
             
             for (var i = 0; i < setting.ItemPerBurst; i++)
             {
                 
-                for (var j = 0; j < setting.BurstCount; j++)
+                for (var j = 0; j < setting.Sides; j++)
                 {
                     var angle = sectorStep * j;
                     var direction = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
@@ -46,14 +46,14 @@ namespace PixelCrew.Components.GoBased
     {
         [SerializeField] private DirectionalProjectile _prefab;
         [SerializeField] private int _itemPerBurst;
-        [SerializeField] private int _burstCount;
+        [SerializeField] private int _sides;
         [SerializeField] private float _delay;
 
         public int ItemPerBurst => _itemPerBurst;
 
         public DirectionalProjectile Prefab => _prefab;
 
-        public int BurstCount => _burstCount;
+        public int Sides => _sides;
 
         public float Delay => _delay;
     }
