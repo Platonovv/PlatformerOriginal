@@ -62,7 +62,7 @@ namespace PixelCrew.Components.GoBased
             var forceVector = AngleToVectorInSector(randomAngle);
             rigedBody.AddForce(forceVector * _speed, ForceMode2D.Impulse);
         }
-
+#if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
             var position = transform.position;
@@ -78,7 +78,7 @@ namespace PixelCrew.Components.GoBased
             UnityEditor.Handles.color = new Color(1f, 1f, 1f, 0.1f);
             UnityEditor.Handles.DrawSolidArc(position, Vector3.forward, rightBound, _sectorAngle, 1);
         }
-
+#endif
         private Vector2 AngleToVectorInSector(float angle)
         {
             var angleMiddleDelta = (180 - _sectorRotation - _sectorAngle) / 2;

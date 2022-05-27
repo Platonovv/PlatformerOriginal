@@ -17,7 +17,7 @@ namespace PixelCrew.UI.Widgets
         {
             if (_source == null)
                 _source = AudioUtils.FindSfxSource();
-            _source.PlayOneShot(_audioClip);
+            _source?.PlayOneShot(_audioClip);
         }
     }
 }

@@ -13,10 +13,7 @@ using PixelCrew.Model.Definitions.Player;
 using PixelCrew.Model.Definitions.Repository;
 using PixelCrew.Model.Definitions.Repository.Items;
 using PixelCrew.Utils;
-using TMPro;
-using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 
 namespace PixelCrew.Creatures.Hero
@@ -38,8 +35,8 @@ namespace PixelCrew.Creatures.Hero
 
       [SerializeField] private Cooldown _throwCooldown;
       [SerializeField] private Cooldown _DashCooldown;
-      [SerializeField] private AnimatorController _armed;
-      [SerializeField] private AnimatorController _disarmed;
+      [SerializeField] private RuntimeAnimatorController _armed;
+      [SerializeField] private RuntimeAnimatorController _disarmed;
 
 
       [Header("Super throw")] [SerializeField]

@@ -29,6 +29,7 @@ namespace PixelCrew.UI.Windows.MainMenu
         public void OnLanguages()
         {
             WindowUtils.CreateWindow("UI/LocalizationWindow");
+            throw new Exception("Test exception");
         }
         
 

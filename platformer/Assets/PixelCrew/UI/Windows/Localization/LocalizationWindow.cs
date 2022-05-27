@@ -2,6 +2,7 @@
 using PixelCrew.Model.Definitions.Localization;
 using PixelCrew.UI.HUD.Dialogs;
 using PixelCrew.UI.Widgets;
+using PixelCrew.UI.Windows;
 using UnityEngine;
 
 namespace PixelCrew.UI.Localization

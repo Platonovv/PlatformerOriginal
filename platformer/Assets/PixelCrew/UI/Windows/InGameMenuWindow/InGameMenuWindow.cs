@@ -1,5 +1,6 @@
 ﻿using System;
 using PixelCrew.Model;
+using PixelCrew.UI.Windows;
 using PixelCrew.Utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;

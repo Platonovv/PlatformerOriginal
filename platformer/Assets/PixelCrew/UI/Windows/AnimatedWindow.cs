@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace PixelCrew.UI
+namespace PixelCrew.UI.Windows
 {
     public class AnimatedWindow : MonoBehaviour
     {
@@ -12,6 +11,7 @@ namespace PixelCrew.UI
 
         protected virtual void Start()
         {
+            Debug.Log($"Hello from {name}");
             _animator = GetComponent<Animator>();
             
             _animator.SetTrigger(Show);

@@ -20,7 +20,7 @@ namespace PixelCrew.Components.Audio
                 if(_source == null)
                     _source = AudioUtils.FindSfxSource();
 
-                _source.PlayOneShot(audioData.Clip);
+                _source?.PlayOneShot(audioData.Clip);
                 break;
             }
         }
