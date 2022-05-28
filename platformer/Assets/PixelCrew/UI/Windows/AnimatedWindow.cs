@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Analytics;
 
 namespace PixelCrew.UI.Windows
 {
@@ -11,6 +12,7 @@ namespace PixelCrew.UI.Windows
 
         protected virtual void Start()
         {
+            AnalyticsEvent.ScreenVisit(gameObject.name);
             Debug.Log($"Hello from {name}");
             _animator = GetComponent<Animator>();
             

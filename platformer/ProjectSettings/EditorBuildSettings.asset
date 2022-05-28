@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level5(Boss Fight).unity
     guid: 2d74fad54f2f65c43a683365d52786a1
+  - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: 7fc54c9c99e2cba429dd1569713962a1
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: cad3f95240fcbfc41a5516e0c5db8265,
       type: 2}

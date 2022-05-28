@@ -171,8 +171,30 @@
                 },
                 {
                     "name": "",
+                    "id": "e79c37f7-b00d-4d6f-a777-a8a69cc4146a",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "StickDeadzone(min=0.4)",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "68578b8d-69f3-4f40-977f-9809f8c50475",
                     "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6f8f21c1-f4c8-4035-a126-240b3e82f92a",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -193,8 +215,30 @@
                 },
                 {
                     "name": "",
+                    "id": "5a88e1c6-0577-486b-92ce-f09a8d46f871",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "efa0aabf-7e18-4e92-a4e5-e961d7511daa",
                     "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throw",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "15133a25-1eb4-4177-86bc-5605291c6b3e",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -237,6 +281,17 @@
                 },
                 {
                     "name": "",
+                    "id": "f4b5ab77-b755-48e6-b937-cf19731d71b7",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "75ed9300-6cdf-4da4-8562-b58d0cbbf1af",
                     "path": "<Keyboard>/i",
                     "interactions": "",
@@ -248,8 +303,30 @@
                 },
                 {
                     "name": "",
+                    "id": "7fb776de-c1f5-4b06-8a9a-bd66df171a32",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextItems",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8885a365-678e-49b3-a145-3350e2a10271",
                     "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonAddInQuickInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "64426660-73ce-4406-a664-20d0b3b847ff",
+                    "path": "<Gamepad>/select",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
