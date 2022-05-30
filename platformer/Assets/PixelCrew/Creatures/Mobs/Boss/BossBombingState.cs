@@ -8,7 +8,7 @@ namespace PixelCrew.Creatures.Mobs.Boss
     {
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            var spawner = animator.GetComponent<BombControllerAndPlatform>();
+            var spawner = animator.GetComponent<BombController>();
             spawner.StartBombing();
         }
     }

@@ -22,7 +22,7 @@ namespace PixelCrew.Creatures.Mobs.Boss.BossCrabby
 
         private IEnumerator BombingSequence()
         {
-            _platforms.ForEach(x => x.SetActive(true));
+            _platforms.ForEach(x => x.SetActive(false));
             
             foreach (var bombSequence in _sequences)
             {
@@ -34,7 +34,7 @@ namespace PixelCrew.Creatures.Mobs.Boss.BossCrabby
                 yield return new WaitForSeconds(bombSequence.Delay);
             }
 
-            _platforms.ForEach(x => x.SetActive(false));
+            _platforms.ForEach(x => x.SetActive(true));
             
             _coroutine = null;
 

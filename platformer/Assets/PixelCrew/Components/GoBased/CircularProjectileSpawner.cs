@@ -9,13 +9,16 @@ namespace PixelCrew.Components.GoBased
     public class CircularProjectileSpawner : MonoBehaviour
     {
         [SerializeField] private CircularProjectileSettings[] _settings;
+        private Coroutine _coroutine;
         public int Stage { get; set; }
 
 
         [ContextMenu("Launch!")]
         public void LaunchProjectiles()
         {
-            StartCoroutine(SpawnProjectiles());
+            if(_coroutine != null)
+                StopCoroutine(_coroutine);
+            _coroutine = StartCoroutine(SpawnProjectiles());
         }
 
         private IEnumerator SpawnProjectiles()
@@ -37,7 +40,8 @@ namespace PixelCrew.Components.GoBased
                     yield return new WaitForSeconds(setting.Delay);
                 }
             }
-            
+
+            _coroutine = null;
         }
     }
 
