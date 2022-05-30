@@ -1,4 +1,5 @@
 ﻿using PixelCrew.Creatures.Mobs.Boss.Bomb;
+using PixelCrew.Creatures.Mobs.Boss.BossCrabby;
 using UnityEngine;
 
 namespace PixelCrew.Creatures.Mobs.Boss
@@ -7,7 +8,7 @@ namespace PixelCrew.Creatures.Mobs.Boss
     {
         public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
-            var spawner = animator.GetComponent<BombController>();
+            var spawner = animator.GetComponent<BombControllerAndPlatform>();
             spawner.StartBombing();
         }
     }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerDef
   m_EditorClassIdentifier: 
   inventorySizeQuick: 3
-  inventorySizeBig: 3
+  inventorySizeBig: 10
   _maxHealth: 15
   _stats:
   - _name: Health

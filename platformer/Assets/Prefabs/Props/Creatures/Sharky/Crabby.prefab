@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d91958eb7448a6ad30cba2a551c219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 0}
+  obj: {fileID: 444909684101719976, guid: 4c40f8967be94d746b28f68a9daa1ae6, type: 3}
   _vision: {fileID: 7195900829407410943}
   _NARUTA: 2
 --- !u!1001 &374146906283245521
