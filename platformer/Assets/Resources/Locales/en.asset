@@ -57,4 +57,34 @@ MonoBehaviour:
   - Key: NOOOOOOOO!!!!!!!
     Value: "NOOOOOOOO!!!!!!!\r"
   - Key: O YeS!
-    Value: O YeS!
+    Value: "O YeS!\r"
+  - Key: This is Double jump!
+    Value: "This is Double jump!\r"
+  - Key: This is Super throw!
+    Value: "This is Super throw!\r"
+  - Key: This is Dash!
+    Value: "This is Dash!\r"
+  - Key: 'Give me 10 Gems and you will pass  '
+    Value: "Give me 10 Gems and you will pass  \r"
+  - Key: I can teach you!
+    Value: "I can teach you!\r"
+  - Key: Good!
+    Value: "Good!\r"
+  - Key: Let's go!
+    Value: "Let's go!\r"
+  - Key: Ok, i find it
+    Value: "Ok, i find it\r"
+  - Key: You need a key
+    Value: "You need a key\r"
+  - Key: Fined one at upper floor
+    Value: "Fined one at upper floor\r"
+  - Key: Pass the test, prove that you are worthy!
+    Value: "Pass the test, prove that you are worthy!\r"
+  - Key: I agree, let's get started!!
+    Value: "I agree, let's get started!!\r"
+  - Key: Well done.. Sekiro..
+    Value: "Well done.. Sekiro..\r"
+  - Key: But I'm not him
+    Value: "But I'm not him\r"
+  - Key: 'Oh, not that game.. '
+    Value: 'Oh, not that game.. '

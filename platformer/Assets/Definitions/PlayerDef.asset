@@ -27,15 +27,15 @@ MonoBehaviour:
     - _value: 10
       _price:
         _itemId: Coin
-        _count: 10
+        _count: 250
     - _value: 20
       _price:
         _itemId: Coin
-        _count: 50
+        _count: 600
     - _value: 40
       _price:
         _itemId: Coin
-        _count: 100
+        _count: 1000
   - _name: Speed
     _id: 1
     _icon: {fileID: 21300000, guid: d9585a93149bb0f4b94c380af707082c, type: 3}
@@ -43,19 +43,19 @@ MonoBehaviour:
     - _value: 4
       _price:
         _itemId: Coin
-        _count: 0
+        _count: 200
     - _value: 5
       _price:
         _itemId: Coin
-        _count: 10
+        _count: 500
     - _value: 6
       _price:
         _itemId: Coin
-        _count: 20
+        _count: 1000
     - _value: 8
       _price:
         _itemId: Coin
-        _count: 50
+        _count: 1500
   - _name: Range Damage
     _id: 2
     _icon: {fileID: 21300000, guid: bf96e7d734451e443b4e3636b8dabfda, type: 3}
@@ -63,23 +63,23 @@ MonoBehaviour:
     - _value: 1
       _price:
         _itemId: Coin
-        _count: 0
+        _count: 150
     - _value: 2
       _price:
         _itemId: Coin
-        _count: 5
+        _count: 250
     - _value: 2
       _price:
         _itemId: Coin
-        _count: 10
+        _count: 500
     - _value: 3
       _price:
         _itemId: Coin
-        _count: 50
+        _count: 1000
     - _value: 4
       _price:
         _itemId: Coin
-        _count: 100
+        _count: 1500
   - _name: Critical Damage
     _id: 3
     _icon: {fileID: 21300000, guid: 3d5a2c68e0f7aae40a205180ae68f353, type: 3}
@@ -87,16 +87,16 @@ MonoBehaviour:
     - _value: 1
       _price:
         _itemId: Coin
-        _count: 0
+        _count: 150
     - _value: 20
       _price:
         _itemId: Coin
-        _count: 5
+        _count: 300
     - _value: 30
       _price:
         _itemId: Coin
-        _count: 10
+        _count: 600
     - _value: 90
       _price:
         _itemId: Coin
-        _count: 50
+        _count: 1200

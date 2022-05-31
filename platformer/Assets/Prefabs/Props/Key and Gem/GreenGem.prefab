@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 1445130078986371974}
   - component: {fileID: 1445130078986371975}
   - component: {fileID: 1445130078986371972}
-  - component: {fileID: 1445130078986371973}
   - component: {fileID: 1445130078986371994}
+  - component: {fileID: 1666615576207810549}
   m_Layer: 0
   m_Name: GreenGem
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445130078986371992}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -40.18, y: 3.24, z: 8.8926735}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -168,8 +168,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1445130078986371973}
-        m_MethodName: Add
+      - m_Target: {fileID: 1666615576207810549}
+        m_MethodName: AddToBig
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -201,20 +201,6 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1445130078986371973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1445130078986371992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5394c05cfcde4c91b2085f9761167e31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _id: GreenGem
-  _count: 1
 --- !u!114 &1445130078986371994
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,3 +215,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 1445130078986371992}
   _state: {fileID: 0}
+--- !u!114 &1666615576207810549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445130078986371992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9c7aa1fdc648a09de2855d20ccb14e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: GreenGem
+  _count: 1
