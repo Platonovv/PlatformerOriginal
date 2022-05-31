@@ -10,10 +10,8 @@
 [Ll]ogs/
 [Mm]emoryCaptures/
 /.vs
-*.exe
 *.log
 *.bin
-*.apk
 /Assets/VSCode*
 /obj/
 /out
