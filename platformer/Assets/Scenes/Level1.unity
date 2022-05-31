@@ -796,7 +796,7 @@ GameObject:
   - component: {fileID: 64693380}
   - component: {fileID: 64693379}
   - component: {fileID: 64693378}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +811,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 64693376}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -100.7, y: 26.5, z: 0.87890625}
+  m_LocalPosition: {x: -99.84, y: 26.07, z: 0.87890625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 810077809}
@@ -846,7 +846,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -7680,12 +7680,12 @@ PrefabInstance:
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -83.04
+      value: -82.06
       objectReference: {fileID: 0}
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 28.21
+      value: 30.65
       objectReference: {fileID: 0}
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
@@ -9685,12 +9685,12 @@ PrefabInstance:
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -82.54
+      value: -81.56
       objectReference: {fileID: 0}
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.71
+      value: 30.15
       objectReference: {fileID: 0}
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
@@ -18825,12 +18825,12 @@ PrefabInstance:
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -82.54
+      value: -81.56
       objectReference: {fileID: 0}
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 28.21
+      value: 30.65
       objectReference: {fileID: 0}
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
@@ -20106,7 +20106,7 @@ GameObject:
   - component: {fileID: 1410366186}
   - component: {fileID: 1410366185}
   - component: {fileID: 1410366184}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20156,7 +20156,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -22954,8 +22954,9 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 5.473406, y: 33.432552}
       - {x: -4.5399647, y: 33.326546}
-      - {x: -97.086525, y: 32.962948}
-      - {x: -97.52471, y: -17.689344}
+      - {x: -106.07333, y: 33.342678}
+      - {x: -106.116104, y: 17.437233}
+      - {x: -106.25836, y: -16.803324}
       - {x: 25.843206, y: -17.291733}
       - {x: 25.621454, y: 33.657177}
 --- !u!4 &1632427300
@@ -23262,12 +23263,12 @@ PrefabInstance:
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -83.04
+      value: -82.06
       objectReference: {fileID: 0}
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.71
+      value: 30.15
       objectReference: {fileID: 0}
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
@@ -60955,12 +60956,12 @@ PrefabInstance:
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -83.04
+      value: -82.06
       objectReference: {fileID: 0}
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.21
+      value: 29.65
       objectReference: {fileID: 0}
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
@@ -61969,7 +61970,9 @@ MonoBehaviour:
   _levelIndex: 1
   _data:
     _inventory:
-      _inventory: []
+      _inventory:
+      - Id: GreenGem
+        Value: 15
     Hp:
       _value: 15
     Perks:
@@ -62446,12 +62449,12 @@ PrefabInstance:
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -82.54
+      value: -81.56
       objectReference: {fileID: 0}
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.21
+      value: 29.65
       objectReference: {fileID: 0}
     - target: {fileID: 3847002281678531832, guid: b669ab29a8652b14da1072c77d980b75,
         type: 3}
