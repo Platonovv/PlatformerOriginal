@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 8816705617889311731}
   - component: {fileID: 8816705617889311730}
   - component: {fileID: 8816705617889311733}
-  - component: {fileID: 8816705617889311732}
   - component: {fileID: 8816705617889311742}
+  - component: {fileID: 7799240893568979008}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -172,8 +172,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8816705617889311732}
-        m_MethodName: Add
+      - m_Target: {fileID: 7799240893568979008}
+        m_MethodName: AddToBig
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -205,20 +205,6 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8816705617889311732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8816705617889311735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5394c05cfcde4c91b2085f9761167e31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _id: Key
-  _count: 1
 --- !u!114 &8816705617889311742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,3 +219,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _objectToDestroy: {fileID: 8816705617889311735}
   _state: {fileID: 0}
+--- !u!114 &7799240893568979008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8816705617889311735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d9c7aa1fdc648a09de2855d20ccb14e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Key
+  _count: 1

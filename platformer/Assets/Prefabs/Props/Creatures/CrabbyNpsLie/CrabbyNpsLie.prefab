@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _required:
   - Id: GreenGem
-    Value: 10
+    Value: 25
   _removeAfterUse: 1
   _onSuccess:
     m_PersistentCalls:
@@ -202,7 +202,7 @@ MonoBehaviour:
   _mode: 0
   _bound:
     _sentences:
-    - _valued: 'Give me 10 Gems and you will pass  '
+    - _valued: 'Give me 25 Gems and you will pass  '
       _icon: {fileID: 21300000, guid: 416f1a4e4a691a249aacd67a284e66b9, type: 3}
       _side: 1
     - _valued: Ok, i find it
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 2806750213342228691}
-  _prefab: {fileID: 8816705617889311735, guid: c8f803e323b036b4e942b0d0781e7920, type: 3}
+  _prefab: {fileID: 0}
   _usePool: 0
 --- !u!114 &1268510583
 MonoBehaviour:

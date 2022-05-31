@@ -64,8 +64,8 @@ MonoBehaviour:
     Value: "This is Super throw!\r"
   - Key: This is Dash!
     Value: "This is Dash!\r"
-  - Key: 'Give me 10 Gems and you will pass  '
-    Value: "Give me 10 Gems and you will pass  \r"
+  - Key: 'Give me 25 Gems and you will pass  '
+    Value: 'Give me 25 Gems and you will pass  '
   - Key: I can teach you!
     Value: "I can teach you!\r"
   - Key: Good!
